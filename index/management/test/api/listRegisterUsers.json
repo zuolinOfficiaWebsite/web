@@ -1,0 +1,30 @@
+{
+  "version": "1.0.0",
+  "errorCode": 200,
+  "response": {
+    "values": [
+      {
+        "id": 152790,
+        "accountName": "1000092",
+        "nickName": "放假",
+        "gender": 0,
+        "communityId": 8,
+        "addressId": 89,
+        "address": "一期1-2-1104",
+        "phones": [],
+        "emails": []
+      },
+      {
+        "id": 152789,
+        "accountName": "1000091",
+        "gender": 1,
+        "communityId": 8,
+        "addressId": 487,
+        "address": "一期1-12-102",
+        "phones": [],
+        "emails": []
+      }
+    ],
+    "pageAnchor": 10016
+  }
+}

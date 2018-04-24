@@ -1,0 +1,186 @@
+{{if tpl == 'main'}}
+<div class="eh_bbs_post eh_bbs_post_detail">
+    <div class="eh_bbs_post_head clearfix">
+        {{if data.senderAvatar}}
+        <img src="{{data.senderAvatar}}">
+        {{else}}
+        <img src="{{defaultAvatar}}">
+        {{/if}}
+        <span class="eh_bbs_post_head_title eh_overflow" title="{{data.subject}}">{{data.subject}}</span>
+        <span class="eh_bbs_post_head_other">
+        <span class="eh_bbs_post_head_name">{{data.creatorNickName}}</span>
+        <span class="eh_bbs_post_head_time">{{EH.Time.getTimeStr(data.createTime)}}</span>
+        </span>
+    </div>
+    <div class="eh_bbs_post_content clearfix">
+        <div class="eh_bbs_post_content_txt">{{#EH.RichText.str2HTML(data.content)}}</div>
+        <div class="eh_bbs_post_content_img">
+            {{each data.p_images}}
+            <img src="{{$value}}">
+            {{/each}}
+        </div>
+        {{if data.p_richText}}
+        {{each data.p_richText}}
+        <div class="eh_bbs_post_content_richText">
+            <div class="row">
+                <div class="col-md-4" data-link="{{$value.link}}">
+                    <div class="panel panel-default service_account_pt">
+                        <div class="panel-body">
+                            <div class="media">
+                                {{if $value.resPath}}
+                                <a href="javascript:void(0);" class="media-left">
+                                    <img src="{{$value.resPath}}">
+                                </a>
+                                {{/if}}
+                                <div class="media-body">
+                                    <div>
+                                        {{if $value.title}}
+                                        <b>{{$value.title.slice(0, 8)}}{{if $value.title.length > 8}}...{{/if}}</b>
+                                        {{/if}}
+                                    </div>
+                                    {{if $value.description}}
+                                    {{$value.description.slice(0, 30)}}{{if $value.description.length > 30}}...{{/if}}
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        {{/if}}
+        <div class="eh_bbs_post_content_vote_container">
+        </div>
+        <div class="eh_bbs_post_content_activity_container">
+        </div>
+    </div>
+    <div class="eh_bbs_post_tool">
+        <a href="javascript:void(0);" class="eh_bbs_post_tool_like"><i></i>赞(0)</a>
+        <a href="javascript:void(0);" class="eh_bbs_post_tool_comment"><i></i>评论({{data.childCount}})</a>
+    </div>
+    <div class="eh_bbs_post_comment_editor_container" id="id_eh_bbs_post_comment_editor_container">
+    </div>
+    <div class="eh_bbs_post_comment_container">
+        <div class="eh_bbs_post_tips">
+            <span>正在加载评论...</span>
+        </div>
+    </div>
+</div>
+{{else if tpl == 'vote'}}
+<div class="eh_bbs_post_content_vote">
+    <div class="row">
+        <div class="col-md-7">
+            <div class="eh_bbs_post_content_vote_inner">
+                {{if !isOwner && data.poll.pollVoterStatus != '2'}}
+                <p class="eh_bbs_post_content_vote_desc">{{if data.poll.multiChoiceFlag == '1'}}多选{{else}}单选{{/if}}选择{{if data.poll.anonymousFlag == '1'}}(匿名投票){{/if}}</p>
+                {{else}}
+                <p class="eh_bbs_post_content_vote_desc">共有 {{data.poll.pollCount}} 人参与投票{{if data.poll.processStatus == 3}} (已结束){{/if}}</p>
+                {{/if}}
+                <ul>
+                    {{each data.items}}
+                    <li class="clearfix" data-id="{{$value.itemId}}">
+                        {{if !isOwner && data.poll.pollVoterStatus != '2'}}
+                            {{if data.poll.multiChoiceFlag == '1'}}
+                            <input type="checkbox" name="eh_bbs_post_content_vote_checkbox" class="eh_bbs_post_content_vote_select">
+                            {{else}}
+                            <input type="radio" name="eh_bbs_post_content_vote_radio" class="eh_bbs_post_content_vote_select">
+                            {{/if}}
+                        {{/if}}
+                        <span class="eh_bbs_post_content_vote_title">{{$index + 1}}、{{$value.subject}}</span>
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{if $value.coverUrl}}
+                                <img src="{{$value.coverUrl}}" class="eh_bbs_post_content_vote_img" style="width: 50px; height: auto;">
+                                {{/if}}
+                            </div>
+                            <div class="col-md-5 pull-right">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" style="width:{{$value.p_progress}}%;color:black">{{$value.p_progress}}%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+                {{if !isOwner && data.poll.pollVoterStatus != '2'}}
+                <button type="button" class="btn btn-default eh_bbs_post_content_vote_submit">提交投票</button>
+                {{/if}}
+            </div>
+            <div class="eh_bbs_post_content_vote_detail_button">
+
+            </div>
+        </div>
+    </div>
+</div>
+{{else if tpl == 'vote_detail'}}
+<a href="{{data}}" target="_blank" class="btn btn-default">投票详情(只物业人员查看)</a>
+{{else if tpl == 'activity'}}
+<div class="eh_bbs_post_content_activity">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="eh_bbs_post_content_activity_inner" data-id="{{detailData.embeddedJson.activity.activityId}}">
+                
+                {{if detailData.embeddedJson.activity.processStatus == 3}}
+                <p class="eh_bbs_post_content_activity_desc">活动已经结束</p>
+                {{else}}
+                    {{if !isOwner}}
+                        {{if detailData.embeddedJson.activity.userActivityStatus < 2}}
+                        <button type="button" class="btn btn-default eh_bbs_post_content_activity_submit">报名</button>
+                        {{else}}
+                            {{if detailData.embeddedJson.activity.confirmFlag == 1 && detailData.embeddedJson.activity.userActivityStatus == 2}}
+                            <button type="button" class="btn btn-default eh_bbs_post_content_activity_cancel_submit">取消报名(待确认)</button>
+                            {{else}}
+                            <button type="button" class="btn btn-default eh_bbs_post_content_activity_cancel_submit">取消报名</button>
+                            {{/if}}
+                            <span class="">请用手机签到</span>
+                        {{/if}}
+                    {{/if}}
+                {{/if}}
+                <span class="eh_bbs_post_content_activity_desc">报名总人数({{detailData.embeddedJson.activity.enrollUserCount}})</span>
+                {{if isOwner}}
+                <div>
+                    <button type="button" class="btn btn-default eh_bbs_post_content_activity_detail">报名/签到详情</button>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>
+{{else if tpl == 'activity_signup'}}
+<div class="eh_bbs_post_content_activity_signup">
+    <div class="row">
+        <div class="col-md-6">
+            <span class="eh_bbs_post_content_activity_signup_title">成年人</span>
+        </div>
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-btn">
+                <button class="btn btn-default eh_bbs_post_content_activity_signup_dec" type="button"><span class="glyphicon glyphicon-minus"></span></button>
+                </span>
+                <input type="text" class="form-control eh_bbs_post_content_activity_signup_input" value="0">
+                <span class="input-group-btn">
+                <button class="btn btn-default eh_bbs_post_content_activity_signup_add" type="button"><span class="glyphicon glyphicon-plus"></span></button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="eh_divider"></div>
+    <div class="row">
+        <div class="col-md-6">
+            <span class="eh_bbs_post_content_activity_signup_title">儿童</span>
+        </div>
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-btn">
+                <button class="btn btn-default eh_bbs_post_content_activity_signup_dec" type="button"><span class="glyphicon glyphicon-minus"></span></button>
+                </span>
+                <input type="text" class="form-control eh_bbs_post_content_activity_signup_input" value="0">
+                <span class="input-group-btn">
+                <button class="btn btn-default eh_bbs_post_content_activity_signup_add" type="button"><span class="glyphicon glyphicon-plus"></span></button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+{{/if}}

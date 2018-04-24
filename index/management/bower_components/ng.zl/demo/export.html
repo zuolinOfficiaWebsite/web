@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../bower_components/FileSaver/FileSaver.js"></script>
+</head>
+<body>
+
+<!--data:text/csv;charset=UTF-8,%22Name%22%3B%22Age%22%0A%22Moroni%22%3B%2250%22%0A%22Tiancum%22%3B%2243%22%0A%22Jacob%22%3B%2227%22%0A%22Nephi%22%3B%2229%22%0A%22Enos%22%3B%2234%22%0A%22Tiancum%22%3B%2243%22%0A%22Jacob%22%3B%2227%22%0A%22Nephi%22%3B%2229%22%0A%22Enos%22%3B%2234%22%0A%22Tiancum%22%3B%2243%22%0A-->
+
+
+<script>
+    var blob = new Blob(['1,2\n2,3','4,5,6'], {type: 'text/csv;charset=utf-8'});
+    saveAs(blob, 'text.csv');
+</script>
+
+</body>
+</html>

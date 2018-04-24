@@ -1,0 +1,44 @@
+<div class="eh_bbs_post_comment">
+    <div class="eh_bbs_post_comment_list">
+        <ul>
+            {{if data.length == 0}}
+            <li>
+                <p>暂无评论</p>
+            </li>
+            {{/if}}
+            {{each data}}
+            <li data-id="{{$value.id}}" data-senderId="{{$value.creatorUid}}">
+                <div class="eh_bbs_post_comment_head">
+                    <div class="eh_bbs_post_comment_head_img">
+                        {{if $value.creatorAvatarUrl}}
+                        <img src="{{$value.creatorAvatarUrl}}">
+                        {{else}}
+                        <img src="{{defaultAvatar}}">
+                        {{/if}}
+                    </div>
+                    <span class="eh_bbs_post_comment_head_name eh_overflow">{{$value.creatorNickName}}</span>
+                    <span class="eh_bbs_post_comment_head_time">{{EH.Time.getTimeStr($value.createTime)}}</span>
+                </div>
+                <div class="eh_bbs_post_comment_content">{{#EH.RichText.str2HTML($value.content)}}</div>
+                {{if $value.attachments != null}}
+                    {{each $value.attachments}}
+                        {{if $value.contentType == 'IMAGE'}}
+                        <div class="eh_bbs_post_comment_content_img">
+                            <img src="{{$value.contentUrl}}">
+                        </div>
+                        {{/if}}
+                    {{/each}}
+                {{/if}}
+                {{if isAdmin || userId == $value.creatorUid}}
+                <div class="eh_bbs_post_comment_tool">
+                    <a href="javascript:void(0);" class="eh_bbs_post_comment_tool_delete">删除</a>
+                </div>
+                {{/if}}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    <div class="eh_bbs_post_page">
+
+    </div>
+</div>

@@ -1,0 +1,16 @@
+{{if tpl == 'main'}}
+<div class="eh_image_preview">
+    <div class="eh_image_preivew_inner clearfix">
+        <button type="button" class="close"><span aria-hidden="true">&times;</span></button>
+        <div class="eh_image_preview_list">
+            
+        </div>
+    </div>
+</div>
+{{else tpl == 'cell'}}
+<div class="eh_image_preview_cell" data-uri="{{data.uri}}" data-url="{{data.url}}">
+    <img src="{{data.url}}" alt="">
+    <button type="button" class="close"><span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}

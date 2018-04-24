@@ -1,0 +1,5 @@
+<div class="zl-grid-edit" ng-dblclick="onEdit($event)">
+    <span ng-bind="gridModel" ng-show="!edit"></span>
+    <select tabindex="-1" ng-model="selected" ng-show="edit" zl-focus-on="zlGridEditSelect" ng-blur="cancelEdit($event)" ng-options="value.name for value in selects" ng-change="onChange($event)" ng-keyup="onKey($event)">
+    </select>
+</div>

@@ -1,0 +1,2 @@
+/*TMODJS:{"version":4,"md5":"15358cb657738292dd5c027b81b9570d"}*/
+define(function(require){return require("./template")("eh_select_company",function(a){"use strict";var b=this,c=(b.$helpers,a.tpl),d="";return"main"==c&&(d+=' <div class="eh_select_company"> <div class="tab-content eh_select_company_content"> <div class="eh_select_company_choice"> </div> </div> <div class="text-center"> <button class="btn btn-success eh_select_company_ok">\u786e\u5b9a</button> </div> </div> '),new String(d)})});

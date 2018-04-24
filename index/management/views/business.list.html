@@ -1,0 +1,14 @@
+<div>
+     <md-content class="md-padding ng-input-button-container">
+         <md-input-container>
+             <label>搜索商家</label>
+             <input ng-model="business.searchName" type="text">
+         </md-input-container>
+         <md-button class="md-raised md-primary" ng-click="business.search()">搜索商家</md-button>
+     </md-content>
+
+    <md-content class="md-padding">
+        <div zl-grid config="gridData"></div>
+    </md-content>
+
+</div>

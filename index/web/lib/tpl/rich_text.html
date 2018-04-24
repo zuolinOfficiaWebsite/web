@@ -1,0 +1,13 @@
+<div class="eh_rich_text eh_rich_text_page_{{page}}">
+    <div  class="eh_rich_text_inner">
+        <h3 class="eh_rich_text_title">{{data.title}}</h3>
+        <div class="eh_divider"></div>
+        <div class="eh_rich_text_other">
+            <span class="eh_rich_text_time">{{EH.Time.getTimeStrAll(data.createTime)}}</span>
+            {{if data.author}}
+            <span class="eh_rich_text_author">{{data.author}}</span>
+            {{/if}}
+        </div>
+        <div class="eh_rich_text_content">{{#data.content}}</div>
+    </div>
+</div>

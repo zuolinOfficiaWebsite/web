@@ -1,0 +1,47 @@
+<div>
+    <md-autocomplete ng-if="!pickChips" flex required
+                     md-selected-item="pick.ngModel"
+                     md-search-text="searchText"
+                     md-items="item in querySearch(searchText)"
+                     md-no-cache="true"
+                     md-delay="500"
+                     md-item-text="item.name"
+                     md-autoselect="true"
+                     ng-disabled="(needRegionParent && !regionParent)"
+                     md-floating-label="{{name | uppercase}}">
+        <md-item-template>
+            <span md-highlight-text="searchText">{{item.name}} </span>
+            <small md-highlight-text="searchText">({{item.path}})</small>
+        </md-item-template>
+        <md-not-found>
+            No matches found
+        </md-not-found>
+    </md-autocomplete>
+
+
+    <md-chips ng-if="pickChips" ng-model="pick.ngModel" md-autocomplete-snap md-require-match>
+        <md-autocomplete
+                md-selected-item="selectedItem"
+                md-search-text="searchText"
+                md-items="item in querySearch(searchText)"
+                md-no-cache="true"
+                md-delay="500"
+                md-item-text="item.name"
+                md-autoselect="true"
+                ng-disabled="(needRegionParent && !regionParent)"
+                placeholder="{{name | uppercase}}">
+            <md-item-template>
+                <span md-highlight-text="searchText">{{item.name}}</span>
+                <small md-highlight-text="searchText">({{item.path}})</small>
+            </md-item-template>
+            <md-not-found>
+                No matches found
+            </md-not-found>
+        </md-autocomplete>
+        <md-chip-template>
+        <span>
+          <strong>{{$chip.name}}</strong><small>({{$chip.path}})</small>
+        </span>
+        </md-chip-template>
+    </md-chips>
+</div>

@@ -1,0 +1,22 @@
+{{if tpl == 'main'}}
+<div class="eh_list_choice">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="list-group eh_list_choice_list eh_list_choice_option">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="list-group eh_list_choice_list eh_list_choice_choiced">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{else if tpl == 'list'}}
+{{each data}}
+<a href="javascript:void(0);" class="list-group-item" data-key="{{$value.key}}" data-name="{{$value.name}}">{{$value.name}}<span class="badge">X</span></a>
+{{/each}}
+{{/if}}

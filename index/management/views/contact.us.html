@@ -1,0 +1,26 @@
+<div>
+    <md-content class="md-padding ng-input-button-container">
+        <md-input-container>
+            <label>搜索</label>
+            <input ng-model="keyword" type="text">
+        </md-input-container>
+        <md-input-container style="width: 100px; top: 3px; margin: 0 20px;">
+            <label>类型</label>
+            <md-select ng-model="selectedType">
+                <md-option ng-repeat="type in cooperationTypeList" value="{{type.value}}">
+                    {{type.name}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-button class="md-raised md-primary" ng-click="search()">搜索</md-button>
+        <md-button class="md-raised" ng-click="reset()">重置</md-button>
+
+
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;列表条目数量：<strong ng-bind="gridData.data.length"></strong></span>
+    </md-content>
+
+    <md-content class="md-padding">
+        <div zl-grid config="gridData"></div>
+    </md-content>
+
+</div>

@@ -1,0 +1,71 @@
+{{if type=='main'}}
+<div class="timeline">
+    <ul class="content_container cbp_tmtimeline">
+
+    </ul>
+</div>
+<div class="eh_bbs_post_page text-center">
+    <a href="javascript:void(0)" type="button" class="btn btn-default btn-lg page_button btn-more" style="width:136px;bottom:0;">加载更多</a>
+</div>
+{{else if type == 'abstract'}}
+{{each data}}
+<li class="content_container_body">
+
+    <div class="cbp_tmtime">
+    <div class="cbp_tmtime">
+        <span>{{$value.time}}</span></div>
+    <div class="cbp_tmicon ">
+    </div>
+    <div class="row cbp_tmlabel">
+        <div class="col-sm-4">
+            {{if $value.img}}
+            <img class="img-responsive" src="{{$value.img}}" alt=""/>
+            {{else}}
+            <img class="img-responsive" src="html/breaking_news/zuolin/01.png" alt=""/>
+            {{/if}}
+        </div>
+        <div class="col-sm-8 text-left">
+            <span class="h3">
+                {{if $value.url}}
+                <a href="{{$value.url}}" target="_blank">{{#$value.title}}</a>
+                {{else}}
+                <a href="#a=detail&b={{$index}}" target="_blank">{{#$value.title}}</a>
+                {{/if}}
+            </span><br/>
+            {{if $value.from}}
+            <div class="eh_h10"></div>
+            <span class="h4 text-left text-muted ">{{$value.from}}</span><br/>
+            {{/if}}
+            <span class="h3 text-left" style="text-indent: 2em;">{{$value.abstract}}</span><br/>
+        </div>
+
+    </div>
+</li>
+{{/each}}
+
+{{else if type == 'detail'}}
+{{each data}}
+{{if $index == topicId}}
+<div class="item">
+    <div class="title h3 text-info"><a href="javascript:void(0);">{{#$value.title}}</a></div>
+    <div class="time h4 text-left text-muted">{{$value.time}}</div>
+    <div class="content">
+        {{each $value.detail}}
+        {{ if $value.txt}}
+        <div class="txt">
+            <p>{{$value.txt}}</p>
+        </div>
+        {{else if $value.img}}
+        <div class="images text-center">
+            {{each $value.img}}
+            <img src="{{$value}}">
+            {{/each}}
+        </div>
+        {{/if}}
+        {{/each}}
+    </div>
+</div>
+{{/if}}
+{{/each}}
+{{/if}}
+      

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../bower_components/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/ng.zl.css">
+    <!-- endinject -->
+</head>
+<body ng-controller="DemoController">
+<div>
+    <div layout="row">
+
+        <div flex zl-region-pick="province" ng-model="province"></div>
+
+        <div flex zl-region-pick="city" region-parent="province" ng-model="city"></div>
+        <div flex zl-region-pick="area" region-parent="city" ng-model="area"></div>
+    </div>
+
+    <div flex zl-region-pick="city" pick-chips="true" ng-model="citys" region-parent="province"></div>
+
+
+    <div layout="row">
+        <div flex zl-community-pick pick-city-id="5636106" ng-model="community"></div>
+
+        <div flex zl-building-pick pick-community-id="community.id" ng-model="building"></div>
+
+        <div flex zl-apartment-pick pick-community-id="community.id" pick-building-name="building.buildingName"
+             ng-model="apartment"></div>
+    </div>
+
+    <div flex zl-community-pick pick-city-id="5636106" pick-chips="true" ng-model="communitys"></div>
+
+    <div flex zl-building-pick pick-community-id="14" pick-chips="true" ng-model="buildings"></div>
+
+    <div flex zl-apartment-pick pick-community-id="14" pick-building-name="'1-1'" pick-chips="true"
+         ng-model="apartments"></div>
+</div>
+
+<!-- inject:js -->
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/underscore/underscore-min.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.js"></script>
+<script src="../bower_components/angular-aria/angular-aria.js"></script>
+<script src="../bower_components/angular-material/angular-material.js"></script>
+<script src="../bower_components/FileSaver/FileSaver.min.js"></script>
+<script src="../js/compatibility.js"></script>
+<script src="../js/common/uploadifive/jquery.uploadifive.min.js"></script>
+<script src="../js/module.js"></script>
+<script src="../js/module.pick.js"></script>
+<script src="../js/directives/ng.zl.apartment.pick.js"></script>
+<script src="../js/directives/ng.zl.building.pick.js"></script>
+<script src="../js/directives/ng.zl.community.pick.js"></script>
+<script src="../js/directives/ng.zl.compile.js"></script>
+<script src="../js/directives/ng.zl.dy.compile.js"></script>
+<script src="../js/directives/ng.zl.focus.on.js"></script>
+<script src="../js/directives/ng.zl.grid.js"></script>
+<script src="../js/directives/ng.zl.region.pick.js"></script>
+<script src="../js/directives/ng.zl.scroll.js"></script>
+<script src="../js/services/ng.zl.exporter.js"></script>
+<script src="../js/services/ng.zl.focus.on.js"></script>
+<script src="../js/services/ng.zl.js"></script>
+<script src="../js/services/ng.zl.pick.js"></script>
+<script src="../js/services/ng.zl.sha256.js"></script>
+<script src="../js/services/ng.zl.uploader.js"></script>
+<script src="templates.min.js"></script>
+<script src="pick.js"></script>
+<!-- endinject -->
+
+</body>
+</html>

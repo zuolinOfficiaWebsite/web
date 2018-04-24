@@ -1,0 +1,42 @@
+{{if tpl == 'main'}}
+<div class="eh_select_city_building_door eh_select_cbd">
+    <ul class="nav nav-tabs eh_select_cbd_tab">
+        {{if options['tab0'] }}
+        <li class="" role="presentation">
+            <a href="javascript:void(0);" data-type="0">全国</a>
+        </li>
+        {{/if}}
+        {{if options['tab1'] }}
+        <li class="active" role="presentation">
+            <a href="javascript:void(0);" data-type="1">按城市</a>
+        </li>
+        {{/if}}
+        {{if options['tab2'] }}
+        <li class="" role="presentation">
+            <a href="javascript:void(0);" data-type="2">按小区</a>
+        </li>
+        {{/if}}
+        {{if options['tab3'] }}
+        <li class="" role="presentation">
+            <a href="javascript:void(0);" data-type="3">按楼栋</a>
+        </li>
+        {{/if}}
+        {{if options['tab4'] }}
+        <li class="" role="presentation">
+            <a href="javascript:void(0);" data-type="4">按门牌号</a>
+        </li>
+        {{/if}}
+    </ul>
+    <div class="tab-content eh_select_cbd_content">
+        <div class="eh_select_cbd_filter">
+
+        </div>
+        <div class="eh_select_cbd_choice">
+
+        </div>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-success eh_select_cbd_ok">{{options.buttonText}}</button>
+    </div>
+</div>
+{{/if}}

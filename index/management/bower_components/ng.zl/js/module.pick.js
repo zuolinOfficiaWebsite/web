@@ -1,0 +1,1 @@
+angular.module('ng.zl.pick', ['ng.zl']);

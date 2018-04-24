@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <!-- inject:head:html -->
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="description" content="左邻，是一款社区交流互助及智慧服务软件，用目前已有10000多个小区及园区入驻左邻。
+    左邻致力于通过移动互联网和大数据手段，为社区及园区提供智慧解决方案，为其住户、物业提供便捷可信赖的生活交流、分享及服务资源整合平台。">
+<meta name="keywords" content="左邻、邻居、园区、社区、物业、投票、活动、社区教育、智慧城市、智慧社区、O2O、小区、维修、
+    家政、修手机、智慧园区、互联网+园区、园区运营、园区O2O 、园区服务">
+<meta name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="renderer" content="webkit">
+<!-- No Baidu Siteapp-->
+<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta content="email=no" name="format-detection"/>
+<link rel="alternate icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="favicon.ico">
+<meta name="apple-mobile-web-app-title" content="左邻"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="bower_components/amazeui/dist/css/amazeui.min.css"/>
+<script src="bower_components/amazeui/dist/js/amazeui.min.js"></script>
+<link rel="stylesheet" href="styles/common.css"/>
+
+    <!-- endinject -->
+    <title>左邻-园区</title>
+    <link rel="stylesheet" href="styles/park.css"/>
+
+</head>
+<body>
+<nav class="header">
+    <div class="header-bar am-cf">
+        <img src="images/index/脚页左邻logo.png" class="header-logo" alt=""/>
+        <div class="am-radius header-nav-btn">
+            <span class="am-icon-bars"></span>
+        </div>
+    </div>
+    <ul class="header-nav">
+        <li><a href="index.html" target="_blank">首页</a></li>
+        <li><a href="park.html" target="_blank">园区解决方案</a></li>
+        <li><a href="officeBuilding.html" target="_blank">写字楼解决方案</a></li>
+        <li><a href="village.html" target="_blank">物业解决方案</a></li>
+        <li><a href="tech.html" target="_blank">科技园案例</a></li>
+        <li><a href="chuneng.html" target="_blank">储能大厦案例</a></li>
+        <li><a href="wuye.html" target="_blank">深业物业案例</a></li>
+        <li><a href="meet.html" target="_blank">左邻视频会议</a></li>
+        <li><a href="aclink.html" target="_blank">左邻智能门禁</a></li>
+        <li><a href="shop.html" target="_blank">左邻小站</a></li>
+        <li><a href="contact_us.html" target="_blank">联系我们</a></li>
+    </ul>
+</nav>
+
+<script>
+    /** inject:menu:js **/
+    $(function () {
+    $('.header .header-nav').css({
+        display: 'none',
+        zIndex: '9999'
+    });
+    var sliding = false;
+    $('.header .am-icon-bars').click(function () {
+        if (sliding) return;
+        sliding = true;
+        $('.header .header-nav').slideToggle(200, function () {
+            sliding = false;
+        });
+    });
+    var setSelected = false;
+    $('.header .header-nav li a').removeClass('header-nav-selected').each(function () {
+        if (this.href === location.href) {
+            setSelected = true;
+            this.className = 'header-nav-selected';
+        }
+    });
+    if (!setSelected) {
+        $('.header .header-nav li a').first().addClass('header-nav-selected');
+    }
+
+    $(document).on('click', function(e) {
+        if(e.target.className !== "header-nav" && !$(e.target).hasClass('header-nav-btn')) {
+            if (sliding) return;
+            sliding = true;
+            $('.header .header-nav').slideUp(200, function () {
+                sliding = false;
+            });
+        }
+    });
+});
+
+    /** endinject **/
+</script>
+
+<div class="park-summary">
+    <div>
+        <p class="park-title-main">园区服务运营平台</p>
+        <p class="park-title-sub">移动平台聚合服务，助力园区效能提升</p>
+    </div>
+
+    <a class="park-download" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.everhomes.android.park.tec_park" target="_blank">
+        <i class="am-icon-mobile park-icon-mobile"></i>
+        <span class="park-download-content">立即下载</span>
+    </a>
+
+    <div class="park-phone">
+        <img src="images/park/手机界面.png" alt="" class="am-img-responsive"/>
+    </div>
+
+    <p class="park-summary-content">
+        左邻园区服务运营解决方案旨在为园区提供面向企业和企业员工的服务运营信息化平台。
+    </p>
+
+</div>
+
+<div class="list-title">
+    <div class="list-line list-line-left"></div>
+    <span class="rhombus rhombus-left">&diams;</span>
+    <span class="list-title-content list-title-smallcontent">OUR OFFERING</span>
+    <span class="rhombus rhombus-right">&diams;</span>
+    <div class="list-line list-line-right"></div>
+</div>
+
+<div class="park-offering">
+    <p class="park-offering-title">
+        基于左邻园区服务运营平台，能够给园区带来的价值为：
+    </p>
+    <div class="park-offering-item park-offering-common-container">
+        <span class="rhombus rhombus-left park-rhombus-center">&diams;</span>
+        <p class="park-offering-item-title">NO.1</p>
+        <p class="park-offering-item-content">
+            通过移动互联网手段帮助园区提升服务品质和效率;
+        </p>
+    </div>
+
+    <div class="park-offering-item park-offering-common-container">
+        <span class="rhombus rhombus-left park-rhombus-center">&diams;</span>
+        <p class="park-offering-item-title">NO.2</p>
+        <p class="park-offering-item-content">
+            基于大数据了解科技园企业真实需求，引入个性化服务，整合资源，为园区带来增值及持续营收;
+        </p>
+    </div>
+
+    <div class="park-offering-item park-offering-common-container">
+        <span class="rhombus rhombus-left park-rhombus-center">&diams;</span>
+        <p class="park-offering-item-title">NO.3</p>
+        <p class="park-offering-item-content">
+            帮助科技园形成标准化、可复制的服务流程，使其在异地园区拓展及运营中也能保持高标准、专业化的服务品质。
+        </p>
+    </div>
+
+</div>
+
+<div class="park-offering park-operation-platform">
+    <p class="park-offering-common-container park-operation-platform-title">
+        园区服务运营平台
+    </p>
+
+    <ul class="am-avg-sm-2">
+        <li>
+            <img src="images/park/1统一用户.png" alt="统一用户" class="park-operation-platform-item-img"/>
+            <p class="park-operation-platform-item-title" style="color: rgb(239, 159, 98);">统一用户</p>
+        </li>
+        <li>
+            <img src="images/park/2统一管理.png" alt="统一管理" class="park-operation-platform-item-img"/>
+            <p class="park-operation-platform-item-title" style="color: rgb(94, 169, 133);">统一管理</p>
+        </li>
+        <li>
+            <img src="images/park/3统一支付.png" alt="统一支付" class="park-operation-platform-item-img"/>
+            <p class="park-operation-platform-item-title" style="color: rgb(220, 94, 93);">统一支付</p>
+        </li>
+        <li>
+            <img src="images/park/4统一服务.png" alt="统一服务" class="park-operation-platform-item-img"/>
+            <p class="park-operation-platform-item-title" style="color: rgb(100, 174, 200);">统一服务</p>
+        </li>
+
+    </ul>
+
+    <div class="park-gradients-line"></div>
+
+    <ul class="am-avg-sm-3 park-operation-platform-service">
+        <li><div class="park-offering-common-container">园区入驻</div></li>
+        <li><div class="park-offering-common-container">服务联盟</div></li>
+        <li><div class="park-offering-common-container">创客空间</div></li>
+        <li><div class="park-offering-common-container">交流大厅</div></li>
+        <li><div class="park-offering-common-container">园区公告</div></li>
+        <li><div class="park-offering-common-container">投诉建议</div></li>
+        <li><div class="park-offering-common-container">视频会议</div></li>
+        <li><div class="park-offering-common-container">物业保修</div></li>
+        <li><div class="park-offering-common-container">停车缴费</div></li>
+        <li><div class="park-offering-common-container">空间租赁</div></li>
+        <li><div class="park-offering-common-container">俱乐部</div></li>
+        <li><div class="park-offering-common-container">园区电商</div></li>
+        <li><div class="park-offering-common-container">打卡</div></li>
+        <li><div class="park-offering-common-container">门禁</div></li>
+        <li><div class="park-offering-common-container">拼车</div></li>
+        <li><div class="park-offering-common-container">电子屏</div></li>
+        <li><div class="park-offering-common-container" style="letter-spacing: -2px;">第三方服务</div></li>
+        <li><div class="park-offering-common-container" style="letter-spacing: -2px;">会议室预定</div></li>
+    </ul>
+
+    <div class="list-title">
+        <div class="list-line list-line-left"></div>
+        <span class="rhombus rhombus-left">&diams;</span>
+        <span class="list-title-content list-title-smallcontent">CASE STUDY</span>
+        <span class="rhombus rhombus-right">&diams;</span>
+        <div class="list-line list-line-right"></div>
+    </div>
+
+</div>
+
+
+
+<div class="park-case">
+    <img src="images/park/赠言底纹图.jpg" alt="" class="am-img-responsive"/>
+
+    <div class="park-case-content">
+        <p class="park-case-summary">
+            作为我国大陆的第一个高新技术产业园，深圳科技工业园在园区运营管理方面一直走在业界的前端。
+            随着移动互联网时代的到来，左邻以技术创新，与科技园合作开启了“智慧园区”的建设序幕。
+            左邻为深圳科技工业园打造高效、便捷的园区服务运营平台，从而有效支撑起园区未来业务的快速发展和创新服务。
+            今天，深圳科技园真正实现了服务效能大提升，以高端服务品质，迎接广阔未来。
+            <!--<br>&nbsp;&nbsp;“我们很高兴与左邻合作，
+            左邻为我们量身打造的园区运营服务平台对深圳科技园的持续运营和发展有着重要的意义。”-->
+        </p>
+        <!--<p class="park-case-leader">
+            <img src="images/park/赠言陈部长头像.png" alt="深业物业" class="park-case-leader-head"/>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;深圳科技园金融服务部部长&nbsp;&nbsp;&nbsp;&nbsp;陈亮</span>
+        </p>-->
+    </div>
+
+</div>
+<!-- inject:foot:html -->
+<div class="footer">
+    <p class="footer-content">
+        <span class="am-icon-phone"></span>&nbsp;电话：<a href="tel:4008384688">4008384688</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="am-icon-envelope"></span>&nbsp;邮箱：<a href="mailto:hz@zuolin.com">hz@zuolin.com</a>
+    </p>
+
+    <p class="footer-content">
+        &copy;2016版权所有：深圳市永佳天成科技发展有限公司<br>粤ICP备13056049
+    </p>
+</div>
+<!-- endinject -->
+</body>
+</html>

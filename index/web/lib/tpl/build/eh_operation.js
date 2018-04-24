@@ -1,0 +1,2 @@
+/*TMODJS:{"version":4,"md5":"71c153f5a08debbeeb37ff12b9affcba"}*/
+define(function(require){return require("./template")("eh_operation",function(a){"use strict";var b=this,c=(b.$helpers,a.data),d="";return d+='<div class="eh_operation"> <div class="eh_operation_button eh_operation_backtop"> <a href="javascript:void(0);"> <span>\u9876\u90e8</span> </a> </div> ',c.hasBottom&&(d+=' <div class="eh_operation_button eh_operation_backbottom"> <a href="javascript:void(0);"> <span>\u5e95\u90e8</span> </a> </div> '),d+=" </div>",new String(d)})});

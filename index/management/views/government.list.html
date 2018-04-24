@@ -1,0 +1,14 @@
+<div>
+    <div class="md-padding ng-input-button-container">
+        <md-input-container>
+            <label>搜索政府</label>
+            <input ng-model="government.searchName" type="text">
+        </md-input-container>
+        <md-button class="md-raised md-primary" ng-click="government.search()">搜索政府</md-button>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;列表条目数量：<strong>{{government.num}}</strong></span>
+    </div>
+
+    <md-content class="md-padding">
+        <div zl-grid config="gridData"></div>
+    </md-content>
+</div>

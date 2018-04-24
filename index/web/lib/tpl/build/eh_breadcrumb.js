@@ -1,0 +1,2 @@
+/*TMODJS:{"version":4,"md5":"eb5701be5eb43a79df1b9b6bac5da1fc"}*/
+define(function(require){return require("./template")("eh_breadcrumb",function(a){"use strict";var b=this,c=(b.$helpers,b.$each),d=a.data,e=(a.$value,a.$index,b.$escape),f="";return f+='<ol class="breadcrumb"> ',c(d,function(a,b){f+=" ",b==d.length-1?(f+=' <li class="active" data-key="',f+=e(a.key),f+='">',f+=e(a.value),f+="</li> "):(f+=' <li data-key="',f+=e(a.key),f+='"><a href="javascript:void(0);">',f+=e(a.value),f+="</a></li> "),f+=" "}),f+=" </ol>",new String(f)})});

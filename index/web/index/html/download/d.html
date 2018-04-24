@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1 ,user-scalable=no">
+        <meta name="keywords" content="左邻|消息|生活服务|邻居|社区|交友|便条|周边|上门|门牌号|叫外卖|叫水|叫车|维修|饭店|咖啡店|水果店|花店|理发店|社康">
+        <meta name="description" content="左邻，是一款基于邻居和社区生活的app,用户可以根据门牌号码给邻居留言，可以在社区论坛组织发布活动，自驾游，周末二手市场，也可以分享点评服务于该社区的家政阿姨，维修师傅等，增加邻里互动，让社区生活更美好。">
+        <link rel="shortcut icon" href="/web/images/favicon.ico">
+        <title>「左邻」下载</title>
+        <style type="text/css">
+        html,body{
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+        }
+        body{
+            font-family: 微软雅黑, Verdana, 'Microsoft Yahei', STXihei;
+            margin-top: 50px;
+            text-align: center;
+            color: #999;
+        }
+
+        .clearfix:before, .clearfix:after { 
+        content:"";  
+        display:table;  
+        }  
+        .clearfix:after {  
+        clear:both;  
+        }  
+        .clearfix {
+        zoom:1;  
+        }
+        .logo{
+            padding-bottom: 10px;
+
+        }
+        .logo a{
+            height: 80px;
+            margin: auto;
+            background: url('/web/lib/images/m_download.png');
+            display: block;
+            background-repeat: no-repeat;
+            background-position: 0px -117px;
+            width: 160px;
+        }
+        .desc{
+            font-size: 20px;
+            color: #1fa24d;
+            line-height: 35px;
+            text-align: center;
+            font-weight: 400;
+        }
+        .download{
+            padding-top: 20px;
+
+        }
+        .download div{
+            margin: 10px 0;
+
+        }
+        .list{
+            padding: 0;
+
+            margin: 0;
+            display: inline-block;
+        }
+        .list li{
+            list-style: none;
+
+            margin: auto 15px;
+            float: left;
+        }
+        .list a{
+            background-repeat: no-repeat;
+            display: block;
+            width: 60px;
+            height: 55px;
+            background: #1fa24d;
+            border-radius: 10px;
+            padding-top: 5px;
+        }
+        .list a i{
+            background: url('/web/lib/images/m_download.png');
+            width: 36px;
+            height: 44px;
+            display: block;
+            margin: auto;
+        }
+        .list a i.android{
+            background-position: -43px 0px;
+        }
+
+        .list a.d_sj {
+            background: #FF6616;
+        }
+        .list p{
+            display: block;
+
+            margin-top: 5px;
+        }
+        .bottom{
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+            padding: 25px 6px;
+            text-align: center;
+            color: #b4b9be;
+            background-color: #282d32;
+        }
+
+
+        .weixin_open{
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: rgba(0,0,0,0.5);
+        }
+        .weixin_open_content{
+            background: white;
+
+            margin: 10px;
+            padding: 5px;
+            position: relative;
+        
+            padding-top: 30px;
+        }
+        .weixin_open span{
+            font-weight: bold;
+
+            font-size: 16px;
+            line-height: 25px;
+        }
+        .weixin_open img{
+            position: absolute;
+            
+            height: 40px;
+            top: 5px;
+            right: 5px;
+        } 
+        </style>
+    </head>
+    <body>
+        <div class="logo">
+            <a href="javascript:void(0);"></a>
+        </div>
+        <div class="desc">左邻·分享一点点</div>
+        <div class="desc">最值得信赖的邻居生活分享平台</div>
+
+        <div class="download">
+            <div>请点击下载与手机系统相匹配的App</div>
+            <ul class="list clearfix">
+                <li>
+                    <a href="http://www.everhomes.com/downloadres?type=1" id="id_android"><i class="android"></i></a>
+                    <p>Android</p>    
+                </li>
+                <li>
+                    <a href="http://itunes.apple.com/us/app/zuo-lin-you-she/id767285002?l=zh&ls=1&mt=8" id="id_ios"><i class="ios"></i></a>
+                    <p>iOS</p>    
+                </li>
+                <li>
+                    <a href="http://www.everhomes.com/downloadres?type=1&pid=2" id="id_s_android" class="d_sj"><i
+                            class="android"></i></a>
+                    <p>商家版</p>
+                </li>
+            </ul>
+        </div>
+        <div class="bottom">
+            深圳市永佳天成科技发展有限公司
+        </div>
+        <script type="text/javascript">
+        (function(){
+            var EHMobile = {};
+            function isWeiXin() {
+                var ua = window.navigator.userAgent.toLowerCase();
+                if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            function weixinOpen(){
+                var html = '<div class="weixin_open"><div class="weixin_open_content"><span>请点击右上角按钮，<br>选择“在浏览器中打开”来下载</span><img src="/web/images/weixin_open_arrows.png"></div></div>';
+                var div = document.createElement('div');
+                div.innerHTML = html;
+                var wo = div.childNodes[0];
+                wo.onclick = function(){
+                    wo.style.display = 'none';
+                }
+                document.body.appendChild(wo);
+            }
+            EHMobile.isWeiXin = isWeiXin;
+            EHMobile.weixinOpen = weixinOpen;
+            window.EHMobile = EHMobile;
+        })();
+        </script>
+        <script type="text/javascript">
+            function download(){
+                if(EHMobile.isWeiXin()){
+                    EHMobile.weixinOpen();
+                    return false;
+                }
+            }
+            var android = document.getElementById('id_android')
+            var ios = document.getElementById('id_ios');
+            var s_android = document.getElementById('id_s_android');
+            android.onclick = download;
+            ios.onclick = download;
+            s_android.onclick = download;
+        </script>
+    </body>
+</html>

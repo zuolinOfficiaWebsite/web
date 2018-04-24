@@ -1,0 +1,368 @@
+{{if tpl == "main"}}
+<div class="service_account_forum">
+    <div class="row service_account_forum_top">
+        <div class="col-md-3 col-md-offset-7 service_account_forum_search">
+            <!-- <div class="input-group">
+                <input type="text" class="form-control" placeholder="按关键字搜索">
+                <span class="input-group-btn">
+                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+            </div> -->
+        </div>
+        <div class="col-md-2 pull-right text-right service_account_forum_create">
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">发帖 <span
+                        class="caret"></span></button>
+                <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                    <li data-type="topic"><a href="javascript:void(0);">话题贴</a></li>
+                    <li data-type="activity"><a href="javascript:void(0);">活动贴</a></li>
+                    <li data-type="vote"><a href="javascript:void(0);">投票贴</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="service_account_forum_tabs">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active" role="presentation"><a href="javascript:void(0);" data-type="all">全部</a></li>
+            <li role="presentation"><a href="javascript:void(0);" data-type="my">我发的贴</a></li>
+            <li role="presentation"><a href="javascript:void(0);" data-type="mydel">我删除的贴</a></li>
+        </ul>
+    </div>
+    <div class="service_account_forum_tab_content">
+        <div class="row">
+            <div class="col-md-3">
+                <select class="form-control service_account_forum_forumlist">
+                    <option value="0">所有论坛</option>
+                </select>
+            </div>
+        </div>
+        <div class="service_account_forum_content">
+        </div>
+    </div>
+</div>
+{{else if tpl == "editor_topic"}}
+<div class="service_account_forum_editor">
+    <p class="bg-info">为保障用户体验，严格恶意营销，严禁发布色情低俗、暴力血腥、政治谣言等各类违反法律法规及相关政策规定的信息。一旦发现，我们将严厉打击和处理。</p>
+
+    <form role="form" class="eh_form_valid">
+        <div class="form-group">
+            <label for="id_fet_forum">选择论坛</label>
+            <select class="form-control service_account_forum_forumlist" id="id_fet_forum" datatype="*">
+                <option value="">选择论坛</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="id_fet_title">标题</label>
+            <input type="title" class="form-control" id="id_fet_title" placeholder="输入标题" datatype="*"></input>
+        </div>
+        <div class="form-group">
+            <label for="id_fet_content">内容（选填）</label>
+            <textarea class="form-control" id="id_fet_content" rows="3" placeholder="输入内容"></textarea>
+        </div>
+        <div class="form-group">
+            <label>添加图片、图文</label>
+
+            <div>
+                <p class="service_account_photo_text_editor_upload_desc"></p>
+                <button type="button" class="btn btn-default service_account_forum_editor_add_photo">添加图片</button>
+                <button type="button" class="btn btn-default service_account_forum_editor_add_photo_text">添加图文</button>
+                <button type="button" class="eh_upload_button" id="service_account_photo_text_editor_upload">上传图片
+                </button>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="service_account_forum_editor_preivew">
+                <div class="row service_account_forum_editor_preivew_pt">
+                </div>
+                <div class="row service_account_forum_editor_preivew_p">
+                </div>
+            </div>
+        </div>
+        <div class="form-group text-right">
+            <button type="submit" class="btn btn-primary btn-lg service_account_forum_editor_submit">提交</button>
+        </div>
+    </form>
+
+</div>
+{{else if tpl == "p_pre"}}
+<div class="col-md-2" data-url="{{data.url}}" data-uri="{{data.uri}}">
+    <div class="thumbnail text-center">
+        <img src="{{data.url}}">
+        <button type="button" class="close service_account_forum_editor_close_p">
+            <span aria-hidden="true">x</span>
+        </button>
+    </div>
+</div>
+{{else if tpl == "pt_pre"}}
+<div class="col-md-4" data-id="{{data.mlibNote.id}}" data-resid="{{data.mlibNote.resId}}">
+    <div class="panel panel-default service_account_pt">
+        <div class="panel-body">
+            <div class="media">
+                {{if data.mlibNote.coverResPath}}
+                <a href="javascript:void(0);" class="media-left">
+                    <img src="{{data.mlibNote.coverResPath}}">
+                </a>
+                {{/if}}
+                <div class="media-body">
+                    <div>
+                        <b>{{data.mlibNote.title.slice(0, 10)}}{{if data.mlibNote.title.length > 10}}...{{/if}}</b>
+                    </div>
+                    {{data.mlibNote.description.slice(0, 30)}}{{if data.mlibNote.description.length > 30}}...{{/if}}
+                </div>
+            </div>
+            <button type="button" class="close service_account_forum_editor_close_pt">
+                <span aria-hidden="true">x</span>
+            </button>
+        </div>
+    </div>
+</div>
+{{else if tpl == "editor_vote"}}
+<div class="service_account_forum_editor">
+    <p class="bg-info">为保障用户体验，严格恶意营销，严禁发布色情低俗、暴力血腥、政治谣言等各类违反法律法规及相关政策规定的信息。一旦发现，我们将严厉打击和处理。</p>
+
+    <form role="form" class="eh_form_valid">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="id_fev_begin">开始时间</label>
+                    <input type="starttime" class="form-control" id="id_fev_begin" placeholder="输入开始时间"
+                           datatype="*"/>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="id_fev_end">截止时间</label>
+                    <input type="endtime" class="form-control" id="id_fev_end" placeholder="输入截止时间"
+                           datatype="*"/>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="id_fev_mul">单选/多选</label>
+                    <select class="form-control" id="id_fev_mul" datatype="*">
+                        <option value="0">单选</option>
+                        <option value="1">多选</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="id_fev_ano">是否采用匿名投票</label>
+                    <select class="form-control" id="id_fev_ano" datatype="*">
+                        <option value="0">否</option>
+                        <option value="1">是</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="id_fev_title">标题</label>
+            <input type="title" class="form-control" id="id_fev_title" placeholder="输入标题" datatype="*"></input>
+        </div>
+        <div class="form-group">
+            <label for="id_fev_content">内容（选填）</label>
+            <textarea class="form-control" id="id_fev_content" rows="3" placeholder="输入内容"></textarea>
+        </div>
+        <div class="form-group">
+            <div class="service_account_forum_editor_preivew">
+                <div class="row service_account_forum_editor_preivew_p">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>投票选项</label>
+
+            <div>
+                <button type="button" class="btn btn-default service_account_forum_editor_add_option"><span
+                        class="glyphicon glyphicon-plus"></span> 添加选项
+                </button>
+                <div class="service_account_forum_editor_option_container">
+                </div>
+            </div>
+        </div>
+        <div class="form-group text-right">
+            <button type="submit" class="btn btn-primary btn-lg service_account_forum_editor_submit">提交</button>
+        </div>
+    </form>
+
+</div>
+{{else if tpl == 'editor_vote_option'}}
+<div class="row">
+    <div class="col-md-8">
+        <input type="text" class="form-control service_account_forum_editor_option_content" placeholder="内容"
+               datatype="*"></input>
+    </div>
+    <div class="col-md-2 pull-right text-right">
+        <button type="button" class="btn btn-default service_account_forum_editor_option_close"><span
+                class="glyphicon glyphicon-remove"></span></button>
+    </div>
+    <div class="col-md-8">
+        {{if needPhotoSelect}}
+        <button type="button" class="btn btn-default service_account_forum_editor_option_add_photo">添加图片</button>
+        {{/if}}
+        <button type="button" class="eh_upload_button" id="service_account_photo_text_editor_option_upload_{{id_suf}}">
+            上传图片
+        </button>
+        <div class="row service_account_forum_editor_option_p">
+        </div>
+    </div>
+</div>
+{{else if tpl == "editor_activity"}}
+<div class="service_account_forum_editor">
+    <p class="bg-info">为保障用户体验，严格恶意营销，严禁发布色情低俗、暴力血腥、政治谣言等各类违反法律法规及相关政策规定的信息。一旦发现，我们将严厉打击和处理。</p>
+
+    <form role="form" class="eh_form_valid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="id_fea_begin">开始时间</label>
+                    <input type="title" class="form-control" id="id_fea_begin" placeholder="输入开始时间"
+                           datatype="*"/>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="id_fea_end">结束时间</label>
+                    <input type="title" class="form-control" id="id_fea_end" placeholder="输入结束时间" datatype="*"/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>是否需要我确认</label>
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" id="id_fea_confirmFlag">是
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>是否需要签到</label>
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" id="id_fea_signFlag">是
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="form-group forum_activity_tag">
+         	
+    	</div>
+        <div class="form-group">
+            <label for="id_fea_title">标题</label>
+            <input type="title" class="form-control" id="id_fea_title" placeholder="输入标题" datatype="*"></input>
+        </div>
+        <div class="form-group">
+            <label for="id_fea_addr">活动地点</label>
+
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" id="id_fea_addr_lbs">地图定位</button>
+                </span>
+                <input type="title" class="form-control" id="id_fea_addr" placeholder="地图定位"
+                       readonly="readonly"></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="id_fea_content">活动详情</label>
+            <textarea class="form-control" id="id_fea_content" rows="3" placeholder="输入活动详情" datatype="*"></textarea>
+        </div>
+        <div class="form-group">
+            <label>添加图片</label>
+
+            <div>
+                <p class="service_account_photo_text_editor_upload_desc"></p>
+                {{if needPhotoSelect}}
+                <button type="button" class="btn btn-default service_account_forum_editor_add_photo">添加图片</button>
+                {{/if}}
+                <button type="button" class="eh_upload_button" id="service_account_photo_text_editor_upload">上传图片
+                </button>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="service_account_forum_editor_preivew">
+                <div class="row service_account_forum_editor_preivew_pt">
+                </div>
+                <div class="row service_account_forum_editor_preivew_p">
+                </div>
+            </div>
+        </div>
+        <div class="form-group text-right">
+            <button type="submit" class="btn btn-primary btn-lg service_account_forum_editor_submit">提交</button>
+        </div>
+    </form>
+
+</div>
+{{else if tpl == "editor_richtext"}}
+<div class="service_account_forum_editor">
+    <form class="eh_form_valid">
+        <div class="form-group">
+            <label for="id_fer_title">标题</label>
+            <input type="title" class="form-control" id="id_fer_title" placeholder="输入标题" datatype="*"/>
+        </div>
+
+        {{if options.hasAuthor}}
+        <div class="form-group">
+            <label for="id_fer_author">作者（选填）</label>
+            <input type="author" class="form-control" id="id_fer_author" placeholder="输入作者"/>
+        </div>
+        {{/if}}
+
+        <div class="form-group">
+            <label for="id_fer_abstract">摘要</label>
+            <textarea type="abstract" class="form-control" rows="3" id="id_fer_abstract" placeholder="输入摘要" datatype="*"></textarea>
+        </div>
+
+        {{if options.hasTopicContent}}
+        <div class="form-group">
+            <label for="id_fer_topicContent">内容</label>
+            <textarea type="topicContent" class="form-control" rows="3" id="id_fer_topicContent" placeholder="输入内容"
+                      datatype="*"></textarea>
+        </div>
+        {{/if}}
+
+        <div class="form-group">
+            <label>封面</label>
+            <div>
+                <p class="service_account_forum_editor_upload_desc"></p>
+                <button type="button" class="eh_upload_button" id="service_account_forum_editor_upload">上传图片
+                </button>
+            </div>
+            <div class="thumbnail text-center" id="id_fer_abstract_photo" style="width: 100px;height: auto">
+            </div>
+        </div>
+
+        {{if options.hasRichEditorBox}}
+        <div class="form-group">
+            <div class="service_account_forum_editor_box" id="service_account_forum_editor">
+            </div>
+        </div>
+        {{/if}}
+
+        {{if options.hasLink}}
+        <div class="form-group">
+            <label for="id_fer_link">输入链接</label>
+            <input type="link" class="form-control" id="id_fer_link" placeholder="输入链接" datatype="*"/>
+        </div>
+        {{/if}}
+
+        <div class="form-group text-right">
+            <button type="submit" class="btn btn-primary btn-lg garden_information_photo_text_submit">发布</button>
+        </div>
+    </form>
+</div>
+{{else if tpl == "activity_tag"}}
+	<label for="activityTag">标签</label>
+     <select id="activityTag"   class="form-control" style="width: 290px;" >
+	{{each data}}
+		<option value="{{$value.id}}">{{$value.name}}</option>
+	{{/each}}
+	</select>
+{{/if}}

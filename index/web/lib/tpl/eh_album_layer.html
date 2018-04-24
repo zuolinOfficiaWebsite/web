@@ -1,0 +1,26 @@
+<div class="eh_album_layer">
+    <div class="eh_album_layer_inner">
+        <div class="eh_album_layer_desc">
+            <span></span>
+        </div>
+        <div class="eh_album_layer_content">
+            <img src="">
+        </div>
+        <div class="eh_album_layer_list">
+            <!-- <a href="javascript:void(0)" class="eh_album_layer_pre">上一页</a> -->
+            <ul class="clearfix">
+                {{each thumbImgs}}
+                    <li class="{{if $index == imgIndex}}cur{{/if}}" data-index="{{$index}}">
+                        <a class="eh_album_layer_list_img" href="javascript:void(0);">
+                            <img src="{{$value}}">
+                        </a>
+                    </li>
+                {{/each}}
+            </ul>
+            <!-- <a href="javascript:void(0)" class="eh_album_layer_next">下一页</a> -->
+        </div>
+        <div class="eh_album_layer_close">
+            <a href="javascript:void(0);">X</a>
+        </div>
+    </div>
+</div>

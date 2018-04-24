@@ -1,0 +1,29 @@
+
+.aclink-animation-left {
+    position: absolute;
+    top: 42%;
+    left: 0;
+    width: 58.8%;
+}
+
+.aclink-animation-right {
+    position: absolute;
+    right: 0;
+    bottom: 40%;
+    width: 57%;
+}
+
+.aclink-feature {
+}
+
+.aclink-feature img {
+    width: 94px;
+    margin-bottom: 19px;
+    margin-top: 0px;
+}
+
+.aclink-feature p {
+    color: #333333;
+    font-size: 9px;
+    margin: 0 0 23px 0;
+}

@@ -1,0 +1,1 @@
+angular.module('ng.zl', ['ng', 'ngSanitize','ngMaterial','ng.zl.sha256', 'ng.zl.templates']);

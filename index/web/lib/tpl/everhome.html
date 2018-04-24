@@ -1,0 +1,53 @@
+{{if tpl == 'dialog'}}
+<div class="eh_dialog panel panel-{{data.type}}">
+    {{if data.title}}
+    <div class="eh_dialog_title panel-heading">
+        <h3 class="panel-title eh_overflow">{{data.title}}</h3>
+    </div>
+    {{/if}}
+    <div class="eh_dialog_content panel-body">
+        {{if data.close}}
+
+        <div class="eh_dialog_close {{if data.title == null}}eh_dialog_close_title_none{{/if}} ">
+            <a href="javascript:void(0);">&times;</a>
+        </div>
+
+        {{/if}}
+        <div class="eh_dialog_content_inner"></div>
+    </div>
+</div>
+{{else if tpl == 'alert'}}
+<div class="eh_alert eh_alert_{{type}} {{if needClose}}eh_alert_hasclose{{/if}} panel panel-{{type}}">
+    <div class="panel-heading">
+        {{if needClose}}
+        <button type="button" class="close eh_alert_close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+        </button>
+        {{/if}}
+        <h3 class="panel-title">{{word}}</h3>
+    </div>
+</div>
+{{else if tpl == 'full_screen'}}
+<div class="eh_dialog_full_screen">
+    <div class="eh_dialog_full_screen_wrap">
+        <div class="eh_dialog_full_screen_close"><a href="javascript:void(0);">X</a></div>
+        <div class="eh_dialog_full_screen_content">
+            <div class="eh_dialog_full_screen_content_inner">
+            </div>
+        </div>
+    </div>
+</div>
+{{else if tpl == 'layer_pop'}}
+<div class="eh_dialog_layer_pop">
+    <div class="eh_dialog_layer_pop_arrow_line"></div>
+    <div class="eh_dialog_layer_pop_arrow"></div>
+    <div class="eh_dialog_layer_pop_content">
+        {{if options.close}}
+        <div class="eh_dialog_layer_pop_content_close clearfix">
+            <button type="button" class="close"><span aria-hidden="true" colspan="2">&times;</span><span
+                    class="sr-only">Close</span></button>
+        </div>
+        {{/if}}
+        <div class="eh_dialog_layer_pop_content_inner"></div>
+    </div>
+</div>
+{{/if}}

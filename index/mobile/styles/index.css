@@ -1,0 +1,215 @@
+/**
+tingyuan 2015-01-04
+首页样式
+*/
+/*.list-title{
+    background: #
+}*/
+.am-slider-default .am-control-nav li a.am-active {
+    background-color: #1fa24d; /* 这一句覆盖了amazeui的默认样式 */
+}
+
+.am-slider-default .am-control-nav {
+    bottom: 10px; /* 这一句覆盖了amazeui的默认样式 */
+}
+
+.am-slider-default .am-direction-nav a {/* 此处覆盖了amazeui的默认样式 */
+    height: 40px;
+    width: 40px;
+    margin-top: -20px;
+}
+.am-slider-default .am-direction-nav a::before {/* 此处覆盖了amazeui的默认样式 */
+    font-size: 40px!important;
+    line-height: 40px!important;
+    height: 40px;
+}
+
+/**************************** 轮播样式 ***************************/
+/* 园区部分 */
+.index-lunbo-item-container {
+    position: relative;
+    color: white;
+    text-align: center;
+    font-weight: 900;
+    font-size: 30px;
+    font-family: '方正准圆简体', '\5b8b\4f53\ff0c',
+    'Segoe UI', 'Lucida Grande', Helvetica, Arial,
+    'Microsoft YaHei', FreeSans, Arimo, 'Droid Sans',
+    'wenquanyi micro hei', 'Hiragino Sans GB', 'Hiragino Sans GB W3', FontAwesome, sans-serif;
+}
+
+.index-lunbo-item-container-first  {
+    font-size: 25px;
+}
+.index-lunbo-title-main {
+    position: absolute;
+    width: 100%;
+    font-size: 1.1em;
+    top: 10%;
+}
+.index-lunbo-title-sub {
+    position: absolute;
+    width: 100%;
+    font-size: 0.6em;
+    top: 28%;
+    letter-spacing: 1px;
+}
+.index-lunbo-title-main-green {
+    color: #3D9A6B;
+    position: absolute;
+    width: 100%;
+    font-size: 1.1em;
+    top: 10%;
+}
+.index-lunbo-title-sub-green {
+    color: #3D9A6B;
+    position: absolute;
+    width: 100%;
+    font-size: 0.6em;
+    top: 28%;
+    letter-spacing: 1px;
+}
+
+.index-lunbo-attach-info {
+    bottom: 7%;
+    font-size: 0.5em;
+    color: #1fa24d;
+    width: 100%;
+    position: absolute;
+
+}
+
+
+@media screen and (max-width: 370px) {
+    .index-lunbo-title-main {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (min-width: 580px) {
+    .index-lunbo-item-container {
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .index-lunbo-attach-info {
+        bottom: 3%;
+    }
+}
+
+/* 下面是首页图片的样式 */
+.index-list-img {
+    padding: 0 10px;
+}
+
+.index-list-info {
+    display: block;
+    text-align: center;
+    padding: 20px 30px 30px 30px;
+    color: #1fa24d;
+}
+
+
+/* 科技园案例部分的图片容器样式 */
+.index-tech-case {
+    position: relative;
+    display: block;
+}
+
+.index-tech-case-info {
+    padding: 15px 20px;
+    background-color: black;
+    opacity: 0.7;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.index-tech-case-info-content {
+    text-indent: 2em;
+    margin: 0;
+}
+
+.index-tech-case-info-tail {
+    text-align: right;
+    font-size: 11px;
+    margin: 0;
+    margin-top: 10px;
+}
+
+
+/* 下面是合作伙伴的部分 */
+.index-partners{
+     -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/* 首页底部关于公司的介绍 */
+.index-company-info {
+    padding: 20px;
+    background-color: #1fa24d;
+    color: white;
+}
+
+.index-company-logo {
+    width: 30%;
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+.index-company-info-content {
+
+    display: inline-block;
+    text-indent: 1em;
+    margin: 0;
+    width: 68%;
+    vertical-align: middle;
+    font-size: 12px;
+    line-height: 20px;
+}
+.am-u-sm-4{
+    text-align: center
+}
+.mobile_download_imgBox{
+    height: 80px ;
+    width:80px;
+    margin: 0 auto;
+    margin-bottom:8px; 
+    overflow: hidden;
+}
+.mobile_download_imgBox>img{
+    width: 100%;
+    height: auto;
+}
+.mobile_download_title{
+    line-height: 18px;
+    font-size: 12px;
+}
+.mobile_download_company{
+    line-height: 14px;
+     font-size: 8px;
+     color: #999999
+}
+.mobile_download_href{
+
+    font-size: 8px;
+     line-height: 14px;
+}
+.mobile_download_href a{
+    color:#1fa24d;
+}
+.downloadSlider [class*=am-u-]+[class*=am-u-]:last-child {
+     float: left;
+}
+.downloadBaner{
+    margin-bottom: 20px;
+}
+.downloadSlider  .am-control-nav{
+    bottom: -15px;
+}

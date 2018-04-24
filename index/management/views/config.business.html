@@ -1,0 +1,14 @@
+<div>
+    <div>
+        <form layout="row" layout-align="start center" name="verification" novalidate ng-submit="onSearch()">
+            <md-input-container>
+                <label>关键字</label>
+                <input type="text" ng-model="keyword"/>
+            </md-input-container>
+
+            <md-button type="submit" class="md-raised md-primary md-default-theme">搜索</md-button>
+            <md-button type="button" class="md-raised md-primary" ng-click="addConfig()">新增配置</md-button>
+        </form>
+    </div>
+    <div zl-grid config="gridData"></div>
+</div>

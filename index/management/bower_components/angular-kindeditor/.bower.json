@@ -1,0 +1,14 @@
+{
+  "name": "angular-kindeditor",
+  "homepage": "https://github.com/zedwang/angular-kindeditor",
+  "_release": "425ec45e8d",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "425ec45e8d2e33f5d66d93275edc4d62b012d48d"
+  },
+  "_source": "https://github.com/zedwang/angular-kindeditor.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/zedwang/angular-kindeditor.git",
+  "_direct": true
+}

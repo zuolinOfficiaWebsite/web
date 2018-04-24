@@ -1,0 +1,33 @@
+<div id="job_nav" class="text-center">
+    <ul class="nav nav-pills" id="myTabs">
+        {{each data}}
+        <li role="presentation" class="_tab">
+            <a href="#{{$value.id}}" id="{{$value.id}}-tab" role="tab" data-toggle="tab" aria-controls="{{$value.id}}"
+               aria-expanded="true">{{$value.title}}</a>
+        </li>
+        {{/each}}
+    </ul>
+</div>
+<br>
+
+<div class="news_title">　当前的职位：</div>
+<br>
+{{each data}}
+<div role="tabpanel" class="tab-pane fade in active job_value" id="{{$value.id}}">
+
+   {{each $value.job}}
+    <p align="left"><span class="jobs_title_01">{{$value.name}}</span></p>
+    <p align="left" class="jobs_title_02">
+        {{each $value.content}}
+        {{$value}}<br>
+        {{/each}}
+    </p>
+    　
+    <br>
+    <img src="_includes/images/line.jpg" width="100%" height="19" alt=""/><br>
+    <br><br>
+
+    {{/each}}
+
+</div>
+{{/each}}

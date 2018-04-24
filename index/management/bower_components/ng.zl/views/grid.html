@@ -1,0 +1,64 @@
+<div class="zl-grid">
+    <table class="table table-striped table-hover table-condensed">
+        <thead>
+        <tr>
+            <th ng-if="config.enableSelect" class="zl-grid-select">
+                <md-checkbox ng-click="onCheckAll($event)"></md-checkbox>
+            </th>
+            <th ng-repeat="col in config.columns" ng-bind="col.name"></th>
+            <th ng-if="config.actions.length > 0">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="(rowIndex, data) in config.data">
+            <td ng-if="config.enableSelect" class="zl-grid-select">
+                <md-checkbox ng-model="data._checked"></md-checkbox>
+            </td>
+            <td ng-repeat="(columnIndex, col) in config.columns">
+                <span ng-if="!col.edit && col.render" style="{{col.style}}">
+                    <div zl-compile html="{{col.render(data[col.field])}}"></div>
+                </span>
+                <span ng-if="!col.edit && !col.render" ng-bind="data[col.field]" style="{{col.style}}"></span>
+
+                <div ng-if="col.edit && col.editType === 'input'">
+                    <div zl-grid-edit grid-model="data[col.field]"
+                         grid-after-edit="onAfterEdit(value, col, data)"></div>
+                </div>
+                <div ng-if="col.edit && col.editType === 'select'">
+                    <div zl-grid-edit-select grid-model="data[col.field]" grid-edit-type="col.editType"
+                         grid-edit-data="col.editData()" grid-after-edit="onAfterEdit(value, col, data)"></div>
+                </div>
+                <div ng-if="col.edit && col.editType === 'switch'">
+                    <div zl-grid-edit-switch grid-model="data[col.field]"
+                         grid-after-edit="onAfterEdit(value, col, data)" grid-edit-ever="col.editEver"></div>
+                </div>
+                <div ng-if="col.edit && col.editType === 'autocomplete'">
+                    <div zl-grid-edit-autocomplete grid-model="data[col.field]"
+                         grid-after-edit="onAfterEdit(value, col, data)"></div>
+                </div>
+            </td>
+
+            <td ng-if="config.actions.length > 0">
+                <md-button ng-repeat="act in config.actions" class="md-raised {{act.className}}" ng-bind="act.htmlAction?act.html(data, config.data, $event):act.html"
+                           ng-disabled="act.isDisabled(data, config.data, $event)"
+                           ng-click="act.action(data, config.data, $event)"></md-button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div layout="row">
+        <md-button class="md-raised" ng-click="getData()" ng-if="config.next">更多</md-button>
+        <md-button class="md-raised" ng-if="!config.next" ng-disabled="true">没有更多</md-button>
+        <div flex ng-if="config.enableSelect && config.actions.length > 0">
+            <md-button ng-repeat="act in config.actions" ng-if="act.batch" class="md-raised {{act.className}}"
+                       ng-bind="act.html"
+                       ng-click="onBatch(act, $event)"></md-button>
+        </div>
+        <div flex layout="row" layout-align="end">
+            <md-button ng-if="config.enableExport && config.exportOptions.xls" ng-click="onExport('xls')" class="md-raised md-primary">导出xls
+            </md-button>
+            <md-button ng-if="config.enableExport && config.exportOptions.csv" ng-click="onExport('csv')" class="md-raised md-primary">导出csv
+            </md-button>
+        </div>
+    </div>
+</div>

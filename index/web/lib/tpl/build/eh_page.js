@@ -1,0 +1,2 @@
+/*TMODJS:{"version":14,"md5":"b61ce09b09ce7d9284eacf14fff2754c"}*/
+define(function(require){return require("./template")("eh_page",function(a){"use strict";var b=this,c=(b.$helpers,a.next),d="";return d+='<div class="eh_page"> ',c&&(d+=' <div class="eh_page_nav_main"> <button type="button" class="btn btn-default">\u52a0\u8f7d\u66f4\u591a</button> </div> '),d+=" </div>",new String(d)})});

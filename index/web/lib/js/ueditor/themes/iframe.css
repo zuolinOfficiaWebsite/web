@@ -1,0 +1,14 @@
+/*可以在这里添加你自己的css*/
+/*ueditor_iframe里面的样式*/
+
+/*global*/
+html{overflow-y: hidden;}
+body{overflow-y:hidden!important;}
+.view{word-break:break-all;word-wrap:break-word;cursor:text;}
+
+
+
+p{clear:both;}
+img{*zoom:1;max-width:100%;height:auto !important;}
+iframe{width:301px !important;border:0;background-color:none;}
+

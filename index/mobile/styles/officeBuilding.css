@@ -1,0 +1,39 @@
+.office_building_logo_text{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    color: #fff
+}
+
+.index-company-info {
+    padding: 20px;
+    background-color: #1fa24d;
+    color: white;
+}
+
+.index-company-logo {
+    width: 30%;
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+.index-company-info-content {
+    display: inline-block;
+    text-indent: 1em;
+    margin: 0;
+    width: 68%;
+    vertical-align: middle;
+    font-size: 12px;
+    line-height: 20px;
+}
+.office_building_img{
+    width: 60%;
+    display:block;
+    height: auto;
+    margin: 0 auto
+}

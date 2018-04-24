@@ -1,0 +1,75 @@
+<div class="zl-w50p zl-display-page ng-scope">
+    <md-toolbar class="zl-toolbar">
+        <div class="md-toolbar-tools">
+            <h2 class="md-flex" ng-show="addApp">新增APP55</h2>
+            <h2 class="md-flex" ng-show="editApp">编辑APP</h2>
+        </div>
+
+    </md-toolbar>
+    <md-content flex layout-padding>
+        <form name="projectForm" ng-submit="onAddAppSubmit()">
+
+            <!--<md-input-container layout="row">
+
+                <label>选择类型</label>
+                <md-select ng-model="realmInfo.selectedRealmId">
+                    <md-option ng-repeat="onerealm in realmInfo.realms track by $index" value="{{onerealm.realmId}}">
+                        {{onerealm.realmName}}
+                    </md-option>
+                </md-select>
+            </md-input-container>-->
+            <div layout="row" layout-align="space-between center">
+                <md-input-container class="md-block" flex="45">
+                    <label>APP名称</label>
+                    <input required ng-model="appInfo.appName">
+
+                </md-input-container>
+                <md-input-container class="md-block" flex="45">
+                    <label>APP版本</label>
+                    <input required ng-model="appInfo.appVersion">
+
+                </md-input-container>
+                 <md-input-container class="md-block" flex="45">
+                    <label>APP园区名称</label>
+                    <input required ng-model="appInfo.zoneName">
+
+                </md-input-container>
+            </div>
+
+            <md-input-container class="md-block">
+                <label>Apple Store链接</label>
+                <input type="url" ng-model="appInfo.iosPath"/>
+
+            </md-input-container>
+
+            <md-content layout="row">
+               
+                 <md-input-container class="md-block">
+                    <button type="button" id="uploadApk">上传安卓APK</button>
+                   
+                </md-input-container>
+                 <md-input-container >
+                    <button type="button" id="uploadLogo">上传APP图标</button>
+                     <!--<span ng-bind="appInfo.qrCodePath"></span>-->
+                </md-input-container>
+                <md-input-container>
+                    <button type="button" id="uploadQrCode">上传二维码</button>
+                     <!--<span ng-bind="appInfo.logoPath"></span>-->
+                </md-input-container>
+
+            </md-content>
+            <div class="md-padding">
+                <div ng-show="appInfo.androidPath" style="margin: 10px 0">APK上传完成：<span ng-bind="appInfo.androidPath" ></span></div>
+                <img ng-src="{{host + appInfo.logoPath}}" alt="APP图标" width="150" ng-show="appInfo.logoPath"/>
+                <img ng-src="{{host + appInfo.qrCodePath}}" alt="二维码" width="150" ng-show="appInfo.qrCodePath"/>
+            
+            <md-content layout="row" layout-align="center">
+                <md-button type="submit" class="md-raised md-primary">提交</md-button>
+            </md-content>
+
+
+        </form>
+
+    </md-content>
+</div>
+

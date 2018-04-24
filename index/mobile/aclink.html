@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+    <!-- inject:head:html -->
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="description" content="左邻，是一款社区交流互助及智慧服务软件，用目前已有10000多个小区及园区入驻左邻。
+    左邻致力于通过移动互联网和大数据手段，为社区及园区提供智慧解决方案，为其住户、物业提供便捷可信赖的生活交流、分享及服务资源整合平台。">
+<meta name="keywords" content="左邻、邻居、园区、社区、物业、投票、活动、社区教育、智慧城市、智慧社区、O2O、小区、维修、
+    家政、修手机、智慧园区、互联网+园区、园区运营、园区O2O 、园区服务">
+<meta name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="renderer" content="webkit">
+<!-- No Baidu Siteapp-->
+<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta content="email=no" name="format-detection"/>
+<link rel="alternate icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="favicon.ico">
+<meta name="apple-mobile-web-app-title" content="左邻"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="bower_components/amazeui/dist/css/amazeui.min.css"/>
+<script src="bower_components/amazeui/dist/js/amazeui.min.js"></script>
+<link rel="stylesheet" href="styles/common.css"/>
+
+    <!-- endinject -->
+    <title>左邻-智能门禁</title>
+    <link rel="stylesheet" href="styles/meet.css"/>
+    <link rel="stylesheet" href="styles/aclink.css"/>
+</head>
+<body>
+
+<nav class="header">
+    <div class="header-bar am-cf">
+        <img src="images/index/脚页左邻logo.png" class="header-logo" alt=""/>
+
+        <div class="am-radius header-nav-btn">
+            <span class="am-icon-bars"></span>
+        </div>
+    </div>
+    <ul class="header-nav">
+        <li><a href="index.html" target="_blank">首页</a></li>
+        <li><a href="park.html" target="_blank">园区解决方案</a></li>
+        <li><a href="officeBuilding.html" target="_blank">写字楼解决方案</a></li>
+        <li><a href="village.html" target="_blank">物业解决方案</a></li>
+        <li><a href="tech.html" target="_blank">科技园案例</a></li>
+        <li><a href="chuneng.html" target="_blank">储能大厦案例</a></li>
+        <li><a href="wuye.html" target="_blank">深业物业案例</a></li>
+        <li><a href="meet.html" target="_blank">左邻视频会议</a></li>
+        <li><a href="aclink.html" target="_blank">左邻智能门禁</a></li>
+        <li><a href="shop.html" target="_blank">左邻小站</a></li>
+        <li><a href="contact_us.html" target="_blank">联系我们</a></li>
+    </ul>
+</nav>
+
+<script>
+    /** inject:menu:js **/
+    $(function () {
+    $('.header .header-nav').css({
+        display: 'none',
+        zIndex: '9999'
+    });
+    var sliding = false;
+    $('.header .am-icon-bars').click(function () {
+        if (sliding) return;
+        sliding = true;
+        $('.header .header-nav').slideToggle(200, function () {
+            sliding = false;
+        });
+    });
+    var setSelected = false;
+    $('.header .header-nav li a').removeClass('header-nav-selected').each(function () {
+        if (this.href === location.href) {
+            setSelected = true;
+            this.className = 'header-nav-selected';
+        }
+    });
+    if (!setSelected) {
+        $('.header .header-nav li a').first().addClass('header-nav-selected');
+    }
+
+    $(document).on('click', function(e) {
+        if(e.target.className !== "header-nav" && !$(e.target).hasClass('header-nav-btn')) {
+            if (sliding) return;
+            sliding = true;
+            $('.header .header-nav').slideUp(200, function () {
+                sliding = false;
+            });
+        }
+    });
+});
+
+    /** endinject **/
+</script>
+
+<div class="meet-img-container">
+    <img src="images/aclink/banner.jpg" alt="" class="am-img-responsive"/>
+
+    <div class="list-title" style="margin-top: 10px;">
+        <div class="list-line list-line-left"></div>
+        <span class="rhombus rhombus-left">&diams;</span>
+            <span class="list-title-content">
+                <span>产品简介</span><br/>
+
+            </span>
+        <span class="rhombus rhombus-right">&diams;</span>
+
+        <div class="list-line list-line-right"></div>
+    </div>
+</div>
+
+<div>
+    <img src="images/aclink/product.jpg" alt="" class="am-img-responsive"/>
+</div>
+
+<div class="meet-img-container">
+    <img src="images/aclink/bluetooth_banner.jpg" alt="" class="am-img-responsive"/>
+    <img src="images/aclink/bluetooth.png" alt="蓝牙门禁" class="aclink-animation-left am-img-responsive"
+         data-am-scrollspy="{animation:'slide-left'}">
+</div>
+
+<div class="meet-img-container">
+    <img src="images/aclink/qrcode_banner.jpg" alt="" class="am-img-responsive"/>
+    <img src="images/aclink/qrcode.png" alt="二维码门禁" class="aclink-animation-right am-img-responsive"
+         data-am-scrollspy="{animation:'slide-right'}">
+</div>
+
+<div class="list-title" style="margin-top: 10px;">
+    <div class="list-line list-line-left"></div>
+    <span class="rhombus rhombus-left">&diams;</span>
+            <span class="list-title-content">
+                <span>产品特色</span><br/>
+
+            </span>
+    <span class="rhombus rhombus-right">&diams;</span>
+
+    <div class="list-line list-line-right"></div>
+</div>
+
+<div class="index-partners-container">
+    <ul class="am-avg-sm-2 index-partners aclink-feature">
+        <li class="am-text-center">
+            <img src="images/aclink/fast.png" alt="更便捷">
+            <p class="am-text-center aclink-feature-word">摇一摇开门、扫一扫开门、离线开门、远程开门...方便触手可及</p>
+        </li>
+        <li class="am-text-center">
+            <img src="images/aclink/safe.png" alt="更安全">
+            <p class="am-text-center aclink-feature-word">优化的加密方式，实施跟踪的开门日志，安全看得见</p>
+        </li>
+        <li class="am-text-center">
+            <img src="images/aclink/smart.png" alt="更智能">
+            <p class="am-text-center aclink-feature-word">访客开门授权，智能就在身边</p>
+        </li>
+        <li class="am-text-center">
+            <img src="images/aclink/wide.png" alt="适配广">
+            <p class="am-text-center aclink-feature-word">不影响原有门禁的适配方案，安装就这么简单</p>
+        </li>
+    </ul>
+</div>
+<!-- inject:foot:html -->
+<div class="footer">
+    <p class="footer-content">
+        <span class="am-icon-phone"></span>&nbsp;电话：<a href="tel:4008384688">4008384688</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="am-icon-envelope"></span>&nbsp;邮箱：<a href="mailto:hz@zuolin.com">hz@zuolin.com</a>
+    </p>
+
+    <p class="footer-content">
+        &copy;2016版权所有：深圳市永佳天成科技发展有限公司<br>粤ICP备13056049
+    </p>
+</div>
+<!-- endinject -->
+
+<script>
+    setTimeout(function () {
+        var width = (document.body.clientWidth / 2 - 94) / 2;
+        for (var i = 0; i < 4; i++) {
+            window.document.getElementsByClassName('aclink-feature-word')[i].style.paddingLeft = width + 'px';
+            window.document.getElementsByClassName('aclink-feature-word')[i].style.paddingRight = width + 'px';
+        }
+    }, 500);
+</script>
+
+</body>
+</html>

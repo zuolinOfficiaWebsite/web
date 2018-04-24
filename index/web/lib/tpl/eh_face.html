@@ -1,0 +1,16 @@
+{{if tpl == 'face'}}
+<div class="eh_face clearfix">
+    {{each data}}
+    <span data-code="{{$value}}">{{$value}}</span>
+    {{/each}}
+</div>
+{{else if tpl == 'face_layer'}}
+<div class="eh_face_layer">
+    {{if options.close}}
+    <div class="eh_face_layer_close">
+        <button type="button" class="close"><span aria-hidden="true">&times;</span></button>
+    </div>
+    {{/if}}
+    <div class="eh_face_layer_inner"></div>
+</div>
+{{/if}}

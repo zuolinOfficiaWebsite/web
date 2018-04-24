@@ -1,0 +1,81 @@
+body {
+    background-color: transparent;
+}
+
+p {
+    margin: 0;
+}
+
+.contactus-head .title_english {
+    font-size: 36px;
+    color: #1fa244;
+    padding-top: 50px;
+    font-weight: 600;
+}
+
+.contactus-head .title_chinese {
+    font-size: 18px;
+    color: #ffffff;
+    padding-top: 2px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.contactus-head .title_line {
+    font-size: 18px;
+    color: #ffffff;
+    padding-top: 11px;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.contactus-content {
+    font-size: 14px;
+}
+
+.contactus-content-item .icon {
+    padding-bottom: 20px;
+    border-left: 0;
+    border-right: 1px;
+    border-bottom: 0;
+    border-top: 0;
+    border-style: dotted;
+    padding-right: 20px;
+    color: #BFBFBF;
+}
+
+.contactus-content-item .icon img {
+    width: 35px;
+
+}
+
+.contactus-content-item .word {
+    color: #ffffff;
+}
+
+.contactus-content-qrcode {
+    padding: 60px 0 41px;
+    color: #ffffff;
+}
+
+.contactus-content-qrcode img {
+    width: 35%;
+    padding-bottom: 11px;
+}
+
+.contactus-content-item-address {
+    display: inline-block;
+}
+
+.contactus-content-item-address-1 {
+    float: left;
+    width: 40%;
+}
+
+.contactus-content-item-address-2 {
+    float: right;
+    width: 60%;
+}
+
+
+

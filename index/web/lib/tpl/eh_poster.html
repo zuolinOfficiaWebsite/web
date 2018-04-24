@@ -1,0 +1,55 @@
+<div class="eh_poster eh_poster_theme_light">
+    <div class="eh_poster_inner">
+        {{if options.tops && options.tops.length > 0}}
+        <div class="eh_poster_top">
+            {{each options.tops}}
+            {{if $value == 'title'}}
+            <div class="input-group">
+                <div class="input-group-addon">标题:</div><input type="text" class="form-control eh_poster_title">
+            </div>
+            {{/if}}
+            {{/each}}
+        </div>
+        {{/if}}
+        <div class="eh_poster_editor_container" id="__id_eh_poster_{{data.id}}"></div>
+        <div class="eh_poster_send">
+            <button class="btn btn-success btn-sm pull-right eh_poster_send_ok">&nbsp;&nbsp;&nbsp;{{options.buttonText}}&nbsp;&nbsp;&nbsp;</button>
+        </div>
+        <div class="eh_poster_limits">
+            {{if options.enableRange}}
+            <div class="btn-group btn-group-sm pull-right eh_poster_range">
+                <button class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" data-value="1"><span class="text-muted">周边</span> <span class="caret text-muted"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="javascript:void(0);" data-value="2">同城</a></li>
+                    <li><a href="javascript:void(0);" data-value="1">周边</a></li>
+                    <li><a href="javascript:void(0);" data-value="0">本小区</a></li>
+                </ul>
+            </div>
+            {{/if}}
+        </div>
+        {{if options.otherActionDesc}}
+        <div class="eh_poster_other_action">
+            <div class="btn-group btn-group-sm pull-right eh_poster_action_box">
+                <button type="button" class="btn btn-default dropdown-toggle btn-link" data-toggle="dropdown" aria-expanded="false"><span class="text-muted">{{options.otherActionDesc || '其他动作'}}</span> <span class="caret text-muted"></span></button>
+                <ul class="dropdown-menu">
+                    {{each options.otherActions}}
+                    <li><a href="javascript:void(0);" data-action="{{$value.action}}">{{$value.name}}</a></li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        {{/if}}
+        <div class="eh_poster_tools clearfix">
+            {{if options.face}}
+            <span class="eh_poster_tools_icon eh_poster_tools_icon_face"></span>
+            {{/if}}
+            {{if options.image}}
+            <span class="eh_poster_tools_icon eh_poster_tools_icon_image">
+                <span class="eh_upload_button_lucency" id="__id_eh_poster_image_{{data.id}}"></span>
+            </span>
+            {{/if}}
+        </div>
+        <div id="__id_eh_poster_image_{{data.id}}-queue"></div>
+        <div class="eh_poster_image_container"></div>
+    </div>
+</div>

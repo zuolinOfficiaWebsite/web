@@ -1,0 +1,114 @@
+/**
+tingyuan 2015-01-05
+科技园案例页样式
+*/
+
+.am-slider-default .am-direction-nav a { /* 此处覆盖了amazeui的默认样式 */
+    height: 50px;
+    width: 50px;
+    margin-top: -25px;
+}
+.am-slider-default .am-direction-nav a::before { /* 此处覆盖了amazeui的默认样式 */
+    font-size: 50px!important;
+    line-height: 50px!important;
+    height: 50px;
+}
+.shop_banner_text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: auto;
+    transform: translate(-50%,-50%)
+}
+/* 页面头部样式 */
+.tech-header-img {
+    position: relative;
+    color: white;
+    text-align: center;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+.tech-title-main {
+    position: absolute;
+    width: 100%;
+    font-size: 30px;
+    top: 10%;
+}
+.tech-title-mid{
+     position: absolute;
+    width: 100%;
+    font-size: 30px;
+    top: 25%;
+}
+.tech-title-sub {
+    position: absolute;
+    width: 100%;
+    font-size: 16px;
+    top: 43%;
+}
+.tech-header-info {
+    text-indent: 1.5em;
+    line-height: 30px;
+    font-size: 16px;
+    margin: 0;
+    padding: 20px 30px;
+}
+
+/* 领导介绍部分样式 */
+.tech-leader {
+    background-image: url('../images/tech/底.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+    color: white;
+    padding: 30px;
+}
+.tech-leader-head {
+    width: 28%;
+    max-width: 100%;
+}
+.tech-leader-info {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.tech-leader-talk {
+    font-size: 16px;
+    line-height: 25px;
+    text-indent: 1em;
+    margin: 30px 0 0 0;
+    text-align: left;
+}
+
+/* 轮播部分 */
+.tech-slider-container {
+    margin: 30px 10px;
+    font-size: 30px;
+}
+.index-company-info {
+    padding: 20px;
+    background-color: #1fa24d;
+    color: white;
+}
+
+.index-company-logo {
+    width: 30%;
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+.index-company-info-content {
+
+    display: inline-block;
+    text-indent: 1em;
+    margin: 0;
+    width: 68%;
+    vertical-align: middle;
+    font-size: 12px;
+    line-height: 20px;
+}
+

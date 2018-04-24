@@ -1,0 +1,37 @@
+{
+  "name": "management",
+  "version": "0.0.0",
+  "authors": [
+    "yatang.li <yatang.li@zuolin.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular-material": "1.0.1",
+    "fontawesome": "~4.3.0",
+    "underscore": "~1.8.3",
+    "jquery": "~2.1.4",
+    "angular-ui-utils": "~0.2.3",
+    "angular-sanitize": "~1.4.0",
+    "restangular": "~1.5.1",
+    "angular-ui-router": "~0.2.15",
+    "jquery-zeroclipboard": "~1.0.0",
+    "angular-zeroclipboard": "~0.4.2",
+    "bootstrap": "~3.3.5",
+    "ng.zl": "~0.6.13",
+    "angular": "1.4.8",
+    "angular-cookies": "~1.4.2",
+    "angular-bootstrap": "~0.13.0",
+    "angular-kindeditor": "https://github.com/zedwang/angular-kindeditor.git",
+    "FileSaver.js": "https://github.com/eligrey/FileSaver.js.git"
+  },
+  "dependencies": {
+    "angular-ui-date": "~0.0.8"
+  }
+}

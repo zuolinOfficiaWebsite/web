@@ -1,0 +1,82 @@
+{{if tpl == 'main'}}
+<div>
+    <p class="text-center">
+        <small>请输入关键字后点击出现的候选项，勿直接输入地址</small>
+    </p>
+    <div class="eh_h5"></div>
+    <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;选城市</span>
+
+        <div class="input-group-btn eh_address_select_flag">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                    aria-expanded="false"></button>
+            <ul class="dropdown-menu eh_address_select_city_list" role="menu">
+            </ul>
+        </div>
+        <input type="text" id="eh_address_select_city" class="form-control" placeholder="选择城市">
+    </div>
+    <div class="eh_h10"></div>
+    {{if data.isShowCommunity}}
+    <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-home"></i> 填小区</span>
+
+        <div class="eh_address_select_flag input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                    aria-expanded="false"></button>
+            <ul class="dropdown-menu eh_address_select_community_list" role="menu">
+            </ul>
+        </div>
+        <input type="text" id="eh_address_select_community" class="form-control" placeholder="选择小区">
+    </div>
+    <div class="eh_h10"></div>
+    {{/if}}
+    {{if data.isShowBuilding}}
+    <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-home"></i> 楼栋号</span>
+
+        <div class="input-group-btn eh_address_select_flag">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                    aria-expanded="false"></button>
+            <ul class="dropdown-menu eh_address_select_building_list" role="menu">
+            </ul>
+        </div>
+        <input type="text" id="eh_address_select_building" class="form-control" placeholder="选楼栋号">
+    </div>
+    <div class="eh_h10"></div>
+    {{/if}}
+    {{if data.isShowApartment}}
+    <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-home"></i> 门牌号</span>
+
+        <div class="input-group-btn eh_address_select_flag">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                    aria-expanded="false"></button>
+            <ul class="dropdown-menu eh_address_select_apartment_list" role="menu">
+            </ul>
+        </div>
+        <input type="text" id="eh_address_select_apartment" class="form-control" placeholder="选门牌号">
+    </div>
+    <div class="eh_h5"></div>
+    {{/if}}
+    <div class="form-group eh_address_submit_btn">
+        <button type="button" class="btn btn-success">{{data.btnName}}</button>
+    </div>
+</div>
+{{else if tpl == 'city'}}
+{{each data}}
+<li data-name="{{$value.name}}" data-id="{{$value.id}}"><a href="javascript:void(0)">{{$value.name}}</a></li>
+{{/each}}
+{{else if tpl == 'community'}}
+{{each data}}
+<li data-name="{{$value.name}}" data-id="{{$value.id}}"><a href="javascript:void(0)">{{$value.name}}</a></li>
+{{/each}}
+{{else if tpl == 'building'}}
+{{each data}}
+<li data-name="{{$value.buildingName}}"><a href="javascript:void(0)">{{$value.buildingName}}</a></li>
+{{/each}}
+{{else if tpl == 'apartment'}}
+{{each data}}
+<li data-name="{{$value.apartmentName}}" data-id="{{$value.addressId}}"><a
+        href="javascript:void(0)">{{$value.apartmentName}}</a></li>
+{{/each}}
+{{/if}}

@@ -1,0 +1,6 @@
+<div class="zl-grid-edit" ng-dblclick="onEdit($event)">
+    <span ng-bind="gridModel" ng-show="!(gridEditEver || edit)"></span>
+
+    <md-switch class="md-primary" tabindex="-1" ng-model="gridModel" aria-label="Switch" zl-focus-on="zlGridEditSwitch" ng-show="gridEditEver || edit" ng-blur="cancelEdit($event)" ng-keyup="onKey($event)" ng-change="onChange($event)"></md-switch>
+
+</div>

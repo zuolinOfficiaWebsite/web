@@ -1,0 +1,21 @@
+<div class="zl-grid-edit" ng-dblclick="onEdit($event)">
+    <span ng-bind="gridModel" ng-show="!edit"></span>
+    <md-autocomplete
+            ng-show="edit"
+            tabindex="-1"
+            ng-model="gridModel"
+            ng-keyup="onKey($event)"
+            md-autofocus="true"
+            md-search-text-change="searchTextChange(gridModel)"
+            md-search-text="gridModel"
+            md-selected-item-change="selectedItemChange(item)"
+            md-items="item in querySearch(gridModel)"
+            md-item-text="item.display"
+            md-min-length="0"
+            placeholder="输入内容，按回车确定，esc退出"
+            md-menu-class="autocomplete-custom-template">
+        <md-item-template>
+            <span md-highlight-text="item.value" md-highlight-flags="^i">{{item.display}}</span>
+        </md-item-template>
+    </md-autocomplete>
+</div>

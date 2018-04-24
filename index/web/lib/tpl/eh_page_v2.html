@@ -1,0 +1,26 @@
+<div class="eh_page_v2">
+    {{if data.option.jump}}
+    <ul class="pagination eh_page_v2_goto">
+        <li>
+            <div class="input-group">
+                <input type="text" class="form-control eh_page_v2_nav_option_input" placeholder="页码">
+                <span class="input-group-btn">
+                <button class="btn btn-default eh_page_v2_nav_option_ok" type="button">跳转</button>
+                </span>
+            </div>
+        </li>
+    </ul>
+    <ul class="pagination eh_page_v2_all">
+        <li>
+            <div>共{{data.pageall}}页</div>
+        </li>
+    </ul>
+    {{/if}}
+    <ul class="pagination">
+        <li class="{{if data.pageindex == 1}}disabled{{/if}}"><a href="javascript:void(0);" data-type="pre">&laquo;</a></li>
+        {{each data.page}}
+        <li class="{{if data.pageindex == $value}}active{{/if}}"><a href="javascript:void(0);" data-type="{{$value}}">{{$value}}</a></li>
+        {{/each}}
+        <li class="{{if data.pageindex == data.pageall}}disabled{{/if}}"><a href="javascript:void(0);" data-type="next">&raquo;</a></li>
+    </ul>
+</div>

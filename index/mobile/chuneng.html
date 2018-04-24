@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <!-- inject:head:html -->
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="description" content="左邻，是一款社区交流互助及智慧服务软件，用目前已有10000多个小区及园区入驻左邻。
+    左邻致力于通过移动互联网和大数据手段，为社区及园区提供智慧解决方案，为其住户、物业提供便捷可信赖的生活交流、分享及服务资源整合平台。">
+<meta name="keywords" content="左邻、邻居、园区、社区、物业、投票、活动、社区教育、智慧城市、智慧社区、O2O、小区、维修、
+    家政、修手机、智慧园区、互联网+园区、园区运营、园区O2O 、园区服务">
+<meta name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="renderer" content="webkit">
+<!-- No Baidu Siteapp-->
+<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta content="email=no" name="format-detection"/>
+<link rel="alternate icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="favicon.ico">
+<meta name="apple-mobile-web-app-title" content="左邻"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="bower_components/amazeui/dist/css/amazeui.min.css"/>
+<script src="bower_components/amazeui/dist/js/amazeui.min.js"></script>
+<link rel="stylesheet" href="styles/common.css"/>
+
+    <!-- endinject -->
+    <title>左邻-科技园案例</title>
+    <link rel="stylesheet" href="styles/tech.css"/>
+</head>
+<body>
+
+<nav class="header">
+    <div class="header-bar am-cf">
+        <img src="images/index/脚页左邻logo.png" class="header-logo" alt=""/>
+        <div class="am-radius header-nav-btn">
+            <span class="am-icon-bars"></span>
+        </div>
+    </div>
+    <ul class="header-nav">
+       <li><a href="index.html" target="_blank">首页</a></li>
+        <li><a href="park.html" target="_blank">园区解决方案</a></li>
+        <li><a href="officeBuilding.html" target="_blank">写字楼解决方案</a></li>
+        <li><a href="village.html" target="_blank">物业解决方案</a></li>
+        <li><a href="tech.html" target="_blank">科技园案例</a></li>
+        <li><a href="chuneng.html" target="_blank">储能大厦案例</a></li>
+        <li><a href="wuye.html" target="_blank">深业物业案例</a></li>
+        <li><a href="meet.html" target="_blank">左邻视频会议</a></li>
+        <li><a href="aclink.html" target="_blank">左邻智能门禁</a></li>
+        <li><a href="shop.html" target="_blank">左邻小站</a></li>
+        <li><a href="contact_us.html" target="_blank">联系我们</a></li>
+    </ul>
+</nav>
+
+<script>
+    /** inject:menu:js **/
+    $(function () {
+    $('.header .header-nav').css({
+        display: 'none',
+        zIndex: '9999'
+    });
+    var sliding = false;
+    $('.header .am-icon-bars').click(function () {
+        if (sliding) return;
+        sliding = true;
+        $('.header .header-nav').slideToggle(200, function () {
+            sliding = false;
+        });
+    });
+    var setSelected = false;
+    $('.header .header-nav li a').removeClass('header-nav-selected').each(function () {
+        if (this.href === location.href) {
+            setSelected = true;
+            this.className = 'header-nav-selected';
+        }
+    });
+    if (!setSelected) {
+        $('.header .header-nav li a').first().addClass('header-nav-selected');
+    }
+
+    $(document).on('click', function(e) {
+        if(e.target.className !== "header-nav" && !$(e.target).hasClass('header-nav-btn')) {
+            if (sliding) return;
+            sliding = true;
+            $('.header .header-nav').slideUp(200, function () {
+                sliding = false;
+            });
+        }
+    });
+});
+
+    /** endinject **/
+</script>
+
+<div class="tech-header">
+    <div class="tech-header-img">
+        <img src="images/chuneng/banner.png" alt="科技园案例-by左邻" class="tech-header-img am-img-responsive"/>
+        <p class="tech-title-main">左邻智慧写字楼平台</p>
+        <p class="tech-title-sub">助力储能打造全自动化的智慧大厦</p>
+    </div>
+
+
+    <p class="tech-header-info">
+       中国储能大厦位于南山科技园核心区，总建筑面积14万平方米，主楼高达333米，在楼顶可以鸟瞰整个科技园，是南山区名副其实的“地标建筑。
+       为提升高端写字楼的服务品质和效率，同时节约运营成本，中国储能大厦服务运营商中正信息致力于打造新型移动互联网化、
+       跨时空、跨地域的智慧垂直园区生态体系，助力传统地产向“科技+地产”转型，开创智慧地产统一服务品牌——UFine。
+       左邻与中正信息深度合作，作为中正信息的技术支持商与合作运营商，与其合力打造UFine。该平台于日前正式上线，启动运营。
+       UFine平台涵盖写字楼运营、物业管控、企业协作以及电商四大平台，作为中国储能大厦的统一运营入口，将完全实现该写楼物业管理、
+       Wifi上网、一卡通、智能门禁、停车充值、快递、电商等所有基础服务以及服务联盟等各大产业服务的端到端运营，使中国储能大厦真正成为功能齐全、技术领先的“智慧大厦”。
+    </p>
+</div>
+
+<!--<div class="tech-leader">
+    <img src="images/tech/何百林.png" alt="" class="tech-leader-head"/>
+
+    <p class="tech-leader-info">深圳科技园园区服务部部长&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;何百林</p>
+
+    <p class="tech-leader-talk">
+        “左邻是一个富有朝气、充满战斗力和创造力的团队，我们之间的合作非常顺畅，我们双方都希望从战略层面更深入地开展合作。”
+    </p>
+</div>-->
+
+<div class="tech-slider-container">
+    <div class="am-slider am-slider-default"
+         data-am-flexslider="{playAfterPaused: 10, slideshowSpeed: 3000, controlNav: false}">
+        <ul class="am-slides">
+            <li><img src="images/chuneng/1.png"/></li>
+            <li><img src="images/chuneng/2.png"/></li>
+            <li><img src="images/chuneng/3.png"/></li>
+            <li><img src="images/chuneng/4.png"/></li>
+            <li><img src="images/chuneng/5.png"/></li>
+            <li><img src="images/chuneng/6.png"/></li>
+        </ul>
+    </div>
+</div>
+
+<!--<div class="tech-leader">
+    <img src="images/tech/陈亮.png" alt="" class="tech-leader-head"/>
+
+    <p class="tech-leader-info">深圳科技园金融服务部部长&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;陈亮</p>
+
+    <p class="tech-leader-talk">
+        “我们与左邻不仅仅是客户关系，左邻在为我们提供产品和技术服务之外，也是我们的运营合作伙伴，我们之间有着非常紧密的合作关系。”
+    </p>
+</div>-->
+<!-- inject:foot:html -->
+<!--<div class="footer">
+    <p class="footer-content">
+        <span class="am-icon-phone"></span>&nbsp;电话：<a href="tel:4008384688">4008384688</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="am-icon-envelope"></span>&nbsp;邮箱：<a href="mailto:hz@zuolin.com">hz@zuolin.com</a>
+    </p>
+
+    <p class="footer-content">
+        &copy;2016版权所有：深圳市永佳天成科技发展有限公司<br>粤ICP备13056049
+    </p>
+</div>-->
+<div class="index-company-info am-cf">
+      <div class="index-company-logo">
+        <img src="images/index/脚页左邻logo.png" alt="左邻" class="am-img-responsive" />
+      </div>
+      <p class="index-company-info-content">
+        致力于通过移动互联网、智能互联、大数据等技术手段，为园区、写字楼以及物业等提供基于移动互联网的服务运营解决方案和线上服务联合运营，共营本地服务升级。</p>
+    </div>
+    <!-- inject:foot:html -->
+    <div class="footer">
+      <p class="footer-content">
+        <span class="am-icon-phone"></span>&nbsp;电话：<a href="tel:4008384688">4008384688</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="am-icon-envelope"></span>&nbsp;邮箱：<a href="mailto:hz@zuolin.com">hz@zuolin.com</a>
+      </p>
+      <p class="footer-content">
+        &copy;2016版权所有：深圳市永佳天成科技发展有限公司<br>粤ICP备13056049
+      </p>
+    </div>
+<!-- endinject -->
+
+</body>
+</html>

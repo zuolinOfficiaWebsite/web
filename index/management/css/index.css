@@ -1,0 +1,196 @@
+
+.site-sidenav.md-sidenav-left {
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    background-color: #3F51B5;
+}
+
+.site-sidenav .md-toolbar-tools {
+}
+
+.site-sidenav .md-toolbar-tools i {
+    font-size: 3rem;
+}
+
+.site-sidenav md-list-item {
+    min-height: 20px;
+}
+
+.site-sidenav md-list-item a {
+    display: block;
+    text-align: left;
+    color: white;
+    line-height: 20px;
+    min-height: 20px;
+}
+
+.site-sidenav md-list-item a:focus {
+    color: white;
+}
+
+.site-sidenav .md-button {
+    margin: 0;
+    padding: 5px 16px;
+
+}
+
+.site-sidenav .site-menu-child .md-button {
+    padding-left: 30px;
+}
+
+.site-sidenav .md-button:hover, .site-sidenav .md-button.md-focused {
+    background: #267ED5 !important;
+    color: white;
+}
+
+.site-sidenav .md-button:hover, .site-sidenav .md-button.active {
+    background: #267ED5 !important;
+}
+
+.site-sidenav .site-menu, .site-sidenav .site-menu-child {
+    width: 100%;
+}
+
+.site-sidenav .site-menu > md-list-item {
+    /* border-bottom: 1px solid #6674C4; */
+}
+
+.site-sidenav .site-menu-child {
+    padding: 0;
+}
+
+.site-sidenav .site-menu-child {
+}
+
+.site-sidenav md-list div {
+    width: 100%;
+}
+
+.site-sidenav md-content {
+    background-color: #3F51B5;
+    color: white;
+}
+
+.site-sidenav-search label {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.site-sidenav-search .md-input {
+    color: white !important;
+}
+
+.site-content-toolbar {
+    background: #f6f6f6 !important;
+    color: #202020 !important;
+    z-index: 3;
+}
+
+/*业务相关*/
+
+.zl-grid-picture img {
+    width: 50px;
+    height: 50px;
+}
+
+.ad-banner-create {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.ad-banner-create img {
+    width: 160px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.zl-btn-upload {
+    margin: 10px;
+    display: inline-block;
+}
+
+.launchpad-item-add-upload-img img, .business-add-upload-img img {
+    width: 37px;
+
+    height: 37px;
+}
+
+.zl-upload-img {
+    height: 85px;
+}
+
+/*通用工具样式*/
+
+.zl-w10p {
+    width: 10%;
+}
+
+.zl-w20p {
+    width: 20%;
+}
+.zl-w30p {
+    width: 30%;
+}
+
+.zl-w40p {
+    width: 40%;
+}.zl-w50p {
+     width: 50%;
+ }
+
+.zl-w60p {
+    width: 60%;
+}.zl-w70p {
+     width: 70%;
+ }
+
+.zl-w80p {
+    width: 80%;
+}
+.zl-w90p {
+    width: 90%;
+}
+.zl-w100p {
+    width: 100%;
+}
+
+.zl-toolbar {
+    border-radius: 3px 3px 0px 0px;
+    box-shadow: 0px 1px rgba(255, 255, 255, 0.1);
+}
+
+.zl-display-page {
+    margin: 16px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+}
+
+.zl-display-page-content {
+    padding: 20px;
+
+}
+
+.zl-display-one-line-middle {
+    width: 300px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.zl-display-one-line-max {
+    width: 500px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/**
+    新闻发布页面中的input和button左右组合的样式
+*/
+
+.ng-input-button-container md-input-container{ /* 应用到外部容器上，使用div */
+    position: relative;
+    top: 15px;
+}
+.ng-input-button-container button {
+
+}

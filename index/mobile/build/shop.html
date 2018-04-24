@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"><meta name="description" content="左邻，是一款社区交流互助及智慧服务软件，用目前已有10000多个小区及园区入驻左邻。
+    左邻致力于通过移动互联网和大数据手段，为社区及园区提供智慧解决方案，为其住户、物业提供便捷可信赖的生活交流、分享及服务资源整合平台。"><meta name="keywords" content="左邻、邻居、园区、社区、物业、投票、活动、社区教育、智慧城市、智慧社区、O2O、小区、维修、
+    家政、修手机、智慧园区、互联网+园区、园区运营、园区O2O 、园区服务"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="renderer" content="webkit"><meta http-equiv="Cache-Control" content="no-siteapp"><meta content="telephone=no" name="format-detection"><meta content="email=no" name="format-detection"><link rel="alternate icon" type="image/x-icon" href="favicon.ico"><link rel="apple-touch-icon-precomposed" href="favicon.ico"><meta name="apple-mobile-web-app-title" content="左邻"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><script src="../bower_components/jquery/dist/jquery.min.js"></script><link rel="stylesheet" href="../bower_components/amazeui/dist/css/amazeui.min.css"><script src="../bower_components/amazeui/dist/js/amazeui.min.js"></script><title>左邻-左邻小站</title><link rel="stylesheet" href="styles/shop.min.css"></head><body><div class="am-g"><nav class="header"><div class="header-bar am-cf"><img src="images/index/脚页左邻logo.png" class="header-logo" alt=""><div class="am-radius header-nav-btn"><span class="am-icon-bars"></span></div></div><ul class="header-nav"><li><a href="index.html" target="_blank">首页</a></li><li><a href="park.html" target="_blank">园区解决方案</a></li><li><a href="village.html" target="_blank">小区解决方案</a></li><li><a href="tech.html" target="_blank">科技园案例</a></li><li><a href="meet.html" target="_blank">左邻视频会议</a></li><li><a href="aclink.html" target="_blank">智能门禁</a></li><li><a href="shop.html" target="_blank">左邻小站</a></li><li><a href="contact_us.html" target="_blank">联系我们</a></li></ul></nav><script>/** inject:menu:js **/
+        $(function () {
+    $('.header .header-nav').css({
+        display: 'none',
+        zIndex: '9999'
+    });
+    var sliding = false;
+    $('.header .am-icon-bars').click(function () {
+        if (sliding) return;
+        sliding = true;
+        $('.header .header-nav').slideToggle(200, function () {
+            sliding = false;
+        });
+    });
+    var setSelected = false;
+    $('.header .header-nav li a').removeClass('header-nav-selected').each(function () {
+        if (this.href === location.href) {
+            setSelected = true;
+            this.className = 'header-nav-selected';
+        }
+    });
+    if (!setSelected) {
+        $('.header .header-nav li a').first().addClass('header-nav-selected');
+    }
+
+    $(document).on('click', function(e) {
+        if(e.target.className !== "header-nav" && !$(e.target).hasClass('header-nav-btn')) {
+            if (sliding) return;
+            sliding = true;
+            $('.header .header-nav').slideUp(200, function () {
+                sliding = false;
+            });
+        }
+    });
+});
+
+        /** endinject **/</script><div class="top_banner"><img src="images/shop/banner.jpg" alt="左邻小站-by左邻"></div><div class="list-title" style="margin-top: 10px"><div class="list-line list-line-left"></div><span class="rhombus rhombus-left">&diams;</span> <span class="list-title-content"><span>业务范围及商品优势</span><br></span><span class="rhombus rhombus-right">&diams;</span><div class="list-line list-line-right"></div></div><div class="index-partners-container"><ul class="am-avg-sm-3 index-partners"><li class="am-avg-sm-6"><ul class="am-avg-sm-2 shop_range_one"><li><img class="" src="images/shop/one.jpg"></li><li><div class="shop_range_one_text am-text-center"><h2>早午餐</h2><p>中式早餐</p><p>西式早餐</p><p>营养午餐</p><p>...</p></div></li></ul></li><li class="shop_range_two"><div class="shop_range_two_top"><img class="" src="images/shop/two.jpg"></div><div class="shop_range_two_text am-text-center"><h2>下午茶</h2><p>面包牛奶 水果拼盘 蛋糕果汁</p><p>...</p></div></li><li><ul class="am-avg-sm-2 shop_range_three"><li><div class="shop_range_three_text am-text-center"><h2>生 鲜</h2><p>潘帕斯牛肉</p><p>牛&nbsp;&nbsp;&nbsp;&nbsp;肉&nbsp;&nbsp;&nbsp;&nbsp;肠</p><p>大&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;米</p><p>...</p></div></li><li><img class="" src="images/shop/three.jpg"></li></ul></li></ul><ul class="am-avg-sm-3"><li><ul class="am-avg-sm-2 shop_range_four"><li><div class="shop_range_four_text am-text-center"><h2>企业福利</h2><p>生日蛋糕</p><p>会议果盘</p><p>活动小吃</p><p>...</p></div></li><li><img class="" src="images/shop/four.jpg"></li></ul></li><li class="shop_range_five"><img class="" src="images/shop/five.jpg"><div class="shop_range_five_text am-text-center"><h2>优&nbsp;&nbsp;&nbsp;&nbsp;势</h2><p>优质的合作伙伴；</p><p>办公室楼下随时取货；</p><p>安全方便快捷；</p></div></li><li><ul class="am-avg-sm-2 shop_range_six"><li><img class="" src="images/shop/six.jpg"></li><li><div class="shop_range_six_text am-text-center"><h2>园内配送</h2><p>快递服务</p><p>商旅服务</p><p>干洗服务</p><p>...</p></div></li></ul></li></ul></div><div class="list-title"><div class="list-line list-line-left"></div><span class="rhombus rhombus-left">&diams;</span> <span class="list-title-content"><span>联合运营</span><br></span><span class="rhombus rhombus-right">&diams;</span><div class="list-line list-line-right"></div></div><div class="shop_range_bottom"><div class="shop_range_bottom_text am-text-center"><img src="images/shop/hand.png" alt="" style="padding-bottom: 9px"><p>1、左邻和园区一期严格筛选小站供应商，双重把控商品质量</p><p>2、左邻负责小站日常运营及用户活跃</p><p>3、左邻定期组织活动，促进用户黏性</p></div></div><div class="footer"><p class="footer-content"><span class="am-icon-phone"></span>&nbsp;电话：<a href="tel:4008384688">4008384688</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="am-icon-envelope"></span>&nbsp;邮箱：<a href="mailto:hz@zuolin.com">hz@zuolin.com</a></p><p class="footer-content">&copy;2016版权所有：深圳市永佳天成科技发展有限公司<br>粤ICP备13056049</p></div></div><script>setTimeout(function () {
+        var height = document.getElementsByClassName('shop_range_two_top')[0].offsetHeight;
+        document.getElementsByClassName('shop_range_two_text')[0].style.height = height + 'px';
+
+        document.getElementsByClassName('shop_range_five')[0].style.height = 2 * height + 'px';
+        document.getElementsByClassName('shop_range_five_text')[0].style.top = -2 * height + 'px';
+    }, 500)</script></body></html>

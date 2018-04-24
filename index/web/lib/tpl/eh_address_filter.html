@@ -1,0 +1,43 @@
+{{if tpl == 'main'}}
+<div class="eh_address_filter row">
+    {{if options.community}}
+    <div class="col-md-4">
+        <input type="text" class="form-control eh_address_filter_community_search" placeholder="搜索小区名字" data-key="{{options.community.key}}" data-name="{{options.community.name}}" value="{{options.community.name}}" disabled>
+    </div>
+    {{else}}
+    <div class="col-md-4">
+        <div class="input-group">
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-default eh_address_filter_city" tabindex="-1">深圳</button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                <ul class="dropdown-menu eh_address_filter_city_list" role="menu">
+                </ul>
+            </div>
+            <input type="text" class="form-control eh_address_filter_community_search" placeholder="搜索小区名字">
+        </div>
+        <div class="list-group eh_address_filter_community_list">
+        </div>
+    </div>
+    {{/if}}
+    {{if type == '3'}}
+    <div class="col-md-4">
+        <input type="text" class="form-control eh_address_filter_building_search" placeholder="搜索楼栋号">
+        <div class="list-group eh_address_filter_building_list">
+    </div>
+    {{/if}}
+    {{if type == '4'}}
+    <div class="col-md-4">
+        <input type="text" class="form-control eh_address_filter_door_search" placeholder="搜索门牌号">
+        <div class="list-group eh_address_filter_door_list">
+    </div>
+    {{/if}}
+</div>
+{{else if tpl == 'city_list'}}
+{{each data}}
+<li><a href="javascript:void(0);" data-key="{{$value.key}}" data-name="{{$value.name}}">{{$value.name}}</a></li>
+{{/each}}
+{{else if tpl == 'list'}}
+{{each data}}
+<a href="javascript:void(0);" class="list-group-item" data-key="{{$value.key}}" data-name="{{$value.name}}">{{$value.name}}</a>
+{{/each}}
+{{/if}}

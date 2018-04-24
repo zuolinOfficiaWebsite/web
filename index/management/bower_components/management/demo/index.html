@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../bower_components/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/ng.zl.css">
+    <!-- endinject -->
+</head>
+<body>
+<div>
+    <h1>Other</h1>
+    <a href="pick.html">pick</a>
+    <a href="grid.html">grid</a>
+</div>
+
+<div ng-controller="DialogController">
+    <h1>Dialog</h1>
+    <md-button ng-click="onAlert($event)">alert</md-button>
+    <md-button ng-click="onConfirm($event)">confirm</md-button>
+    <md-button ng-click="onPrompt($event)">prompt</md-button>
+
+    <md-button ng-click="onToast()">toast</md-button>
+    <md-button ng-click="onProgressStart()">progress start</md-button>
+    <md-button ng-click="onProgressDone()">progress done</md-button>
+</div>
+
+<div ng-controller="UploaderController">
+    <h1>Upload</h1>
+    <button type="button" id="uploadFile">Upload</button>
+</div>
+
+<div ng-controller="ProgressController">
+    <h1>Progress</h1>
+    <p>会显示在右上角转圈</p>
+    <button ng-click="start()">start</button>
+    <button ng-click="done()">done</button>
+</div>
+
+<div zl-scroll="scroll-top scroll-bottom"></div>
+
+
+<!-- inject:js -->
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/underscore/underscore-min.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.js"></script>
+<script src="../bower_components/angular-aria/angular-aria.js"></script>
+<script src="../bower_components/angular-material/angular-material.js"></script>
+<script src="../bower_components/FileSaver/FileSaver.min.js"></script>
+<script src="../js/compatibility.js"></script>
+<script src="../js/common/uploadifive/jquery.uploadifive.min.js"></script>
+<script src="../js/module.js"></script>
+<script src="../js/module.pick.js"></script>
+<script src="../js/directives/ng.zl.apartment.pick.js"></script>
+<script src="../js/directives/ng.zl.building.pick.js"></script>
+<script src="../js/directives/ng.zl.community.pick.js"></script>
+<script src="../js/directives/ng.zl.compile.js"></script>
+<script src="../js/directives/ng.zl.dy.compile.js"></script>
+<script src="../js/directives/ng.zl.focus.on.js"></script>
+<script src="../js/directives/ng.zl.grid.js"></script>
+<script src="../js/directives/ng.zl.region.pick.js"></script>
+<script src="../js/directives/ng.zl.scroll.js"></script>
+<script src="../js/services/ng.zl.exporter.js"></script>
+<script src="../js/services/ng.zl.focus.on.js"></script>
+<script src="../js/services/ng.zl.js"></script>
+<script src="../js/services/ng.zl.pick.js"></script>
+<script src="../js/services/ng.zl.sha256.js"></script>
+<script src="../js/services/ng.zl.uploader.js"></script>
+<script src="templates.min.js"></script>
+<script src="app.js"></script>
+<script src="index.js"></script>
+<!-- endinject -->
+</body>
+</html>

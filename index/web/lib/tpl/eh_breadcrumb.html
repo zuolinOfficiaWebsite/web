@@ -1,0 +1,9 @@
+<ol class="breadcrumb">
+    {{each data}}
+        {{if $index == data.length - 1}}
+        <li class="active" data-key="{{$value.key}}">{{$value.value}}</li>
+        {{else}}
+        <li data-key="{{$value.key}}"><a href="javascript:void(0);">{{$value.value}}</a></li>
+        {{/if}}
+    {{/each}}
+</ol>

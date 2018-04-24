@@ -1,0 +1,1 @@
+window.myModule = angular.module('myApp', ['ng.zl', 'ng.zl.grid', 'ng.zl.uploader', 'ng.zl.pick']);

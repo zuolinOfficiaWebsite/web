@@ -1,0 +1,160 @@
+<div class="eh_bbs_post eh_bbs_post_list">
+    {{if data.length == 0}}
+    <div class="eh_bbs_post_tips">
+        <span>没有数据！</span>
+    </div>
+    {{else}}
+    <ul>
+        {{each data}}
+        <li data-forumid="{{$value.forumId}}" data-topicid="{{$value.id}}" data-index="{{$index}}"
+            data-senderid="{{$value.senderId}}">
+            <div class="eh_bbs_post_head clearfix">
+                {{if $value.contentCategory === 1004 || $value.contentCategory === 1005 || $value.contentCategory === 1006}}
+                <input type="checkbox" name="eh-switch-size" class="eh_switch_size" data-size="mini" data-on-text="公开"
+                       data-off-text="不公开" {{if $value.privateFlag == 0}}checked{{/if}}>
+                {{/if}}
+                <img src="{{$value.senderAvatar || EHB.defaultFace}}">
+                <span class="eh_bbs_post_head_title eh_overflow">{{$value.subject}}{{if $value.embeddedAppId == 27 }}(<span style="color: red">{{if $value.assignStatus == 0 && $value.taskStatus == 1}}未分配{{else}}{{labels['label_'+$value.taskStatus]}}{{/if}}</span>){{/if}}</span>
+                <span class="eh_bbs_post_head_other">
+                <span class="eh_bbs_post_head_name">{{$value.creatorNickName}}</span>
+                <span class="eh_bbs_post_head_time">{{EH.Time.getTimeStr($value.createTime)}}</span>
+                </span>
+            </div>
+            <div class="eh_bbs_post_content clearfix">
+                {{if $value.attachments != null && $value.attachments.length>0}}
+                {{each $value.attachments}}
+                {{if $value.contentType == 'IMAGE' || $value.contentType == 'image'}}
+                <div class="eh_bbs_post_content_img">
+                    <img src="{{$value.contentUrl}}">
+                </div>
+                {{/if}}
+                {{/each}}
+                {{/if}}
+                <div class="eh_bbs_post_content_txt">
+                    {{if $value.content}}
+                    {{#EH.RichText.str2HTML($value.content.slice(0, 180))}}
+                    {{if $value.content.length > 180}}<br>...{{/if}}
+                    {{/if}}
+                </div>
+                {{if $value.attachments != null && $value.attachments.length>0}}
+                {{each $value.attachments}}
+                {{if $value.contentType == 2}}
+                <div class="eh_bbs_post_content_sound">
+                    <a href="javascript:void(0);" class="eh_media_sound" data-url="{{$value.p_resPath}}">
+                        语音 <i class="glyphicon glyphicon-play"></i>
+                    </a>
+                </div>
+                {{else if $value.contentType == 5}}
+                {{if $value.resPath}}
+                <div class="eh_bbs_post_content_download">
+                    <a href="{{$value.resPath}}" target="_blank"
+                       class="btn btn-default eh_w200 eh_overflow">下载 {{$value.resPath}}</a>
+                </div>
+                {{/if}}
+                {{/if}}
+                {{/each}}
+                {{/if}}
+                {{if $value.embeddedAppId == '21'}}
+                {{if $value.embeddedJson}}
+                <div class="eh_bbs_post_content_richText">
+                    <div class="row">
+                        <div class="col-md-4" data-link="{{$value.embeddedJson.content}}">
+                            <div class="panel panel-default service_account_pt">
+                                <div class="panel-body">
+                                    <div class="media">
+                                        {{if $value.embeddedJson.coverUri}}
+                                        <a href="javascript:void(0);" class="media-left">
+                                            <img src="{{$value.embeddedJson.coverUri}}">
+                                        </a>
+                                        {{/if}}
+                                        <div class="media-body">
+                                            <div>
+                                                {{if $value.embeddedJson.title}}
+                                                <b>{{$value.embeddedJson.title.slice(0, 8)}}{{if $value.embeddedJson.title.length > 8}}...{{/if}}</b>
+                                                {{/if}}
+                                            </div>
+                                            {{if $value.embeddedJson.contentAbstract}}
+                                            {{$value.embeddedJson.contentAbstract.slice(0, 30)}}{{if $value.embeddedJson.contentAbstract.length > 30}}...{{/if}}
+                                            {{/if}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/if}}
+                {{/if}}
+                {{if $value.embeddedAppId == '14'}}
+                {{if $value.embeddedJson}}
+                <div class="eh_bbs_post_content_vote">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="eh_bbs_post_content_vote_inner">
+                                {{if $value.embeddedJson.poll.processStatus == 3}}
+                                <p class="eh_bbs_post_content_vote_desc">投票已经结束</p>
+                                {{else}}
+                                {{if $value.creatorUid != userId && $value.embeddedJson.poll.pollVoterStatus == '1'}}
+                                <button type="button" class="eh_bbs_post_content_vote_detail btn btn-default">
+                                    <span class="glyphicon glyphicon-stats"></span> 我要投票
+                                </button>
+                                {{else}}
+                                <button type="button" class="eh_bbs_post_content_vote_detail btn btn-default">
+                                    <span class="glyphicon glyphicon-stats"></span> 查看投票详情
+                                </button>
+                                {{/if}}
+                                {{/if}}
+                                <span>参加总人数({{$value.embeddedJson.poll.pollCount}})</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/if}}
+                {{/if}}
+                {{if $value.embeddedAppId == '3'}}
+                {{if $value.embeddedJson}}
+                <div class="eh_bbs_post_content_activity">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="eh_bbs_post_content_activity_inner">
+                                {{if $value.creatorUid != userId && $value.embeddedJson.userActivityStatus == '1'}}
+                                <button type="button"
+                                        class="eh_bbs_post_content_activity_detail btn btn-default">我要报名
+                                </button>
+                                {{else}}
+                                <button type="button"
+                                        class="eh_bbs_post_content_activity_detail btn btn-default">查看报名详情
+                                </button>
+                                {{/if}}
+                                <span>报名总人数({{$value.embeddedJson.enrollUserCount}})</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/if}}
+                {{/if}}
+            </div>
+            <div class="eh_bbs_post_tool">
+                <a href="javascript:void(0);"
+                   class="eh_bbs_post_tool_delete {{if !(userId == $value.senderId || (hasForumAdmin && communityId == $value.forumId))}}none{{/if}}"><i></i>删除</a>
+                <a href="javascript:void(0);" class="eh_bbs_post_tool_like">赞(0)</a>
+                <a href="javascript:void(0);" class="eh_bbs_post_tool_comment"><i></i>评论({{$value.childCount}})</a>
+                <a href="javascript:void(0);" class="eh_bbs_post_tool_detail"><i></i>详情</a>
+            </div>
+            {{if options.otherActions}}
+            <div class="eh_bbs_post_other_action text-center">
+                {{each options.otherActions}}
+                <button class="btn btn-default" type="button" data-action="{{$value.action}}">{{$value.name}}
+                </button>
+                {{/each}}
+            </div>
+            {{/if}}
+            <!-- <div class="eh_bbs_post_comment">
+                小评论待确定
+            </div> -->
+        </li>
+        {{/each}}
+    </ul>
+
+    {{/if}}
+</div>

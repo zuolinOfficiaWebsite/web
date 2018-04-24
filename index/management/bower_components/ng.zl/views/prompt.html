@@ -1,0 +1,13 @@
+<md-dialog>
+    <md-dialog-content>
+        <h2 ng-if="config.title">{{config.title}}</h2>
+        <p>{{config.content}}</p>
+        <md-input-container md-no-float>
+            <input ng-model="result" placeholder="">
+        </md-input-container>
+    </md-dialog-content>
+    <div class="md-actions">
+        <md-button ng-click="onCancel()" class="md-primary">{{config.cancel | uppercase}}</md-button>
+        <md-button ng-click="onOk()" class="md-primary">{{config.ok | lowercase}}</md-button>
+    </div>
+</md-dialog>

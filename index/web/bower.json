@@ -1,0 +1,35 @@
+{
+  "name": "web",
+  "version": "0.3.0",
+  "authors": [
+    "yatang.li@zuolin.com <yatang.li@zuolin.com>",
+    "yu.zhang@zuolin.com <yu.zhang@zuolin.com>"
+  ],
+  "description": "web",
+  "main": "index.html",
+  "license": "",
+  "devDependencies": {
+    "bootstrap": "3.3.4",
+    "font-awesome": "~4.3.0",
+    "jquery": "1.11.2",
+    "jquery-cookie": "1.4.1",
+    "jquery-json": "2.5.1",
+    "jquery-migrate": "1.2.1",
+    "seajs": "3.0.0",
+    "seajs-css": ""
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "moment": "~2.10.3"
+  }
+}
+
+
+
+

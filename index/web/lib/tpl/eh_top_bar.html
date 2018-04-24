@@ -1,0 +1,155 @@
+{{if tpl == "main"}}
+<div class="eh_top_bar_fix ">
+    <div class="eh_top_bar navbar navbar-fixed-top navbar-inverse">
+        <div class="container">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <div class="navbar-fluid">
+                        <a href="{{url}}"><img src="{{logosrc}}" class="eh_top_bar_logo"></a>
+                    </div>
+                </div>
+                <div class="btn-group eh_top_bar_change_family">
+
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown nav navbar-nav navbar-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                                class="glyphicon glyphicon-cog"></span> <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="eh_top_bar_logout"><a href="javascript:void(0);"><span
+                                    class="glyphicon glyphicon-log-out"></span> 退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="nav navbar-nav navbar-right eh_top_bar_user_info">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{{else if tpl == "family"}}
+<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    {{if findFamily}}
+    {{each familyData}}
+    {{if $value.addressId == currentFamilyAddressId}}
+    <span class="glyphicon glyphicon-home user_current_family"
+          data-familyId="{{$value.id}}"></span>
+    {{$value.communityName}}-{{$value.buildingName}}-{{$value.apartmentName}}
+    <span class="caret"></span>
+    {{/if}}
+    {{/each}}
+    {{else}}
+    <font color="red"><span class="glyphicon glyphicon-home"></span> 未知，请点击这里切换 <span class="caret"></span></font>
+    {{/if}}
+</button>
+<ul class="dropdown-menu" role="menu">
+    {{each familyData}}
+    <li data-familyId="{{$value.id}}"><a
+            href="javascript:void(0);">{{$value.communityName}}-{{$value.buildingName}}-{{$value.apartmentName}}</a>
+    </li>
+    {{if $index != familyData.length - 1}}
+    <li class="divider"></li>
+    {{/if}}
+    {{/each}}
+</ul>
+{{else if tpl == "property"}}
+<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    {{if findProp}}
+    {{each propData}}
+    {{if $value.communityId == currentPropCommunityId}}
+    <span class="glyphicon glyphicon-home user_current_community"
+          data-communityId="{{$value.communityId}}" data-name="{{$value.communityName}}"></span>
+    {{$value.communityName}}
+    <span class="caret"></span>
+    {{/if}}
+    {{/each}}
+    {{else}}
+    <font color="red"><span class="glyphicon glyphicon-home"></span> 未知，请点击这里切换 <span class="caret"></span></font>
+    {{/if}}
+</button>
+<ul class="dropdown-menu" role="menu">
+    {{each propData}}
+    <li data-communityId="{{$value.communityId}}"><a
+            href="javascript:void(0);">{{$value.communityName}}</a>
+    </li>
+    {{if $index != propData.length - 1}}
+    <li class="divider"></li>
+    {{/if}}
+    {{/each}}
+</ul>
+{{else if tpl == "government"}}
+<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    {{if findGov}}
+    {{each govData}}
+    {{if $value.id == currentGovOrganizationData.response.id}}
+    <span class="glyphicon glyphicon-home user_current_organization"
+          data-organizationId="{{$value.id}}" data-name="{{$value.name}}"></span> {{$value.name}}
+    <span class="caret"></span>
+    {{/if}}
+    {{/each}}
+    {{else}}
+    <font color="red"><span class="glyphicon glyphicon-home"></span> 未知，请点击这里切换 <span class="caret"></span></font>
+    {{/if}}
+</button>
+<ul class="dropdown-menu" role="menu">
+    {{each govData}}
+    <li data-organizationId="{{$value.id}}"><a
+            href="javascript:void(0);">{{$value.name}}</a>
+    </li>
+    {{if $index != govData.length - 1}}
+    <li class="divider"></li>
+    {{/if}}
+    {{/each}}
+</ul>
+{{else if tpl == "enterprise"}}
+<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    {{if findEnterprise}}
+    {{each enterpriseData}}
+    {{if $value.id == currentEnterpriseId}}
+    <span class="glyphicon glyphicon-home user_current_enterprise"
+          data-enterpriseId="{{$value.id}}"></span> {{$value.name}}
+    <span class="caret"></span>
+    {{else}}
+    <font color="red"><span class="glyphicon glyphicon-home"></span> 未知，请点击这里切换 <span class="caret"></span></font>
+    {{/if}}
+    {{/each}}
+    {{else}}
+    <font color="red"><span class="glyphicon glyphicon-home"></span> 未知，请点击这里切换 <span class="caret"></span></font>
+    {{/if}}
+</button>
+<ul class="dropdown-menu" role="menu">
+    {{each enterpriseData}}
+    <li data-enterpriseId="{{$value.id}}"><a
+            href="javascript:void(0);">{{$value.name}}</a>
+    </li>
+    {{if $index != enterpriseData.length - 1}}
+    <li class="divider"></li>
+    {{/if}}
+    {{/each}}
+</ul>
+{{else if tpl == "user"}}
+<img src="{{userInfo.avatar}}&config=100_100"><span class="eh_overflow">{{userInfo.nickName}}</span>
+{{else if tpl == "login"}}
+<span class="eh_overflow">请登录 <a href="javascript:void(0);" class="eh_top_bar_login"><span
+        class="glyphicon glyphicon-log-in"></span></a></span>
+{{else if tpl == 'onlogin'}}
+<ul class="nav navbar-nav navbar-right">
+    <li class="divider-vertical hidden-xs">
+        <a href="/web/user.html">您好！&nbsp;{{data.name}}</a>
+    </li>
+    <li class="divider-vertical hidden-xs">
+        <a href="#a=logout">退出</a>
+    </li>
+</ul>
+{{else if tpl == 'notlogin'}}
+<ul class="nav navbar-nav navbar-right">
+    <li class="divider-vertical hidden-xs">
+        <a href="#a=sign_up">注册</a>
+    </li>
+    <li class="divider-vertical hidden-xs">
+        <a href="#a=login">登录</a>
+    </li>
+</ul>
+{{/if}}

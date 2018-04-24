@@ -1,0 +1,673 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    min-width: 1000px;
+    font-family: "Microsoft YaHei", "微软雅黑";
+    line-height: 1.7;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+.wrap {
+    width: 970px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.pr135 {
+    padding-right: 135px;
+}
+
+/*nav_bar start */
+.nav_bar {
+    width: 100%;
+    height: 50px;
+    background: rgb(85, 85, 85);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+
+.nav_bar .wrap {
+    height: 50px;
+    margin: 0 auto;
+}
+
+.nav_bar .wrap .logo {
+}
+
+.nav_bar .wrap .logo a {
+    display: block;
+}
+
+.nav_bar .wrap .logo a img {
+    display: block;
+}
+
+.nav_bar .wrap .nav_con {
+    width: 880px;
+    height: 50px;
+}
+
+.nav_bar .wrap .nav_con ul.nav_list {
+}
+
+.nav_bar .wrap .nav_con ul.nav_list li {
+    float: right;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+}
+
+.nav_bar .wrap .nav_con ul.nav_list li.active {
+    background: #1FA24F;
+}
+
+.nav_bar .wrap .nav_con ul.nav_list li a {
+    color: #fff;
+    display: block;
+    padding: 0 20px;
+}
+
+.nav_bar .wrap .nav_con ul.nav_list li a:hover {
+    color: #1FA24F;
+    text-decoration: none;
+}
+
+.nav_bar .wrap .nav_con ul.nav_list li.active a:hover {
+    color: #000;
+    background: #e7e7e7;
+    text-decoration: none;
+}
+
+/*nav_bar end */
+
+/*second_menu start */
+.second_menu {
+    width: 100%;
+    height: 60px;
+    background: rgb(125, 123, 114);
+    position: fixed;
+    left: 0;
+    top: 50px;
+    z-index: 100;
+    display: none;
+}
+
+.second_menu .wrap {
+    margin: 0 auto;
+}
+
+.second_menu .wrap .second_menu_con {
+    display: none;
+}
+
+.second_menu .wrap .second_menu_con ul {
+    float: right;
+}
+
+.second_menu .wrap .second_menu_con ul li {
+    float: left;
+    height: 60px;
+    font-size: 16px;
+    line-height: 60px;
+}
+
+.second_menu .wrap .second_menu_con ul li a {
+    color: #fff;
+    display: block;
+    padding: 0 20px;
+}
+
+.second_menu .wrap .second_menu_con ul li a:hover {
+    color: #1FA24F;
+}
+
+/*second_menu end  */
+
+/*banner start */
+.banner {
+    position: relative;
+}
+
+.banner img {
+    width: 100%;
+    display: block;
+}
+
+a.btn {
+    display: block;
+    width: 50px;
+    height: 50px;
+    /*background:url(../images/addPage/btn_next.png) no-repeat;*/
+    position: absolute;
+    left: 50%;
+    margin-left: -25px;
+    bottom: 39px;
+}
+
+/*product_intro start */
+.product_intro h3, .product_features h3 {
+    width: 100%;
+    height: 40px;
+    margin: 40px 0;
+    line-height: 40px;
+    background: url(../images/addPage/bg_h4.png) no-repeat center;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    color: #1fa24d;
+}
+
+.product_intro .product_intro_title {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.product_intro .product_intro_title img.di {
+    width: 100%;
+    display: block;
+}
+
+/*Bluetooth part */
+.product_intro .product_intro_title .bluetoothDoor img.bluetoochImg {
+    width: 349px;
+    height: 240px;
+}
+
+.product_intro .product_intro_title .bluetoothDoor {
+    width: 494px;
+    position: absolute;
+    left: 22%;
+    top: 30%;
+}
+
+/*erweima part */
+.product_intro .product_intro_title .ewmDoor img.ewmDoorImg {
+    width: 333px;
+    height: 268px;
+}
+
+.product_intro .product_intro_title .ewmDoor {
+    width: 494px;
+    position: absolute;
+    left: 51%;
+    top: 24%;
+}
+
+/*word description*/
+.product_intro .product_intro_title p.intro {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+    text-indent: 90px;
+}
+
+.bluetoothOpen, .ewmOpen {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.bluetoothOpen img, .ewmOpen img {
+    width: 100%;
+    display: block;
+}
+
+.bluetoothOpen img.desc {
+    width: 50%;
+    position: absolute;
+    left: 25px;
+    top: 140px;
+    opacity: 0;
+    transition: all 0.6s;
+}
+
+.ewmOpen img.desc {
+    width: 50%;
+    position: absolute;
+    bottom: 172px;
+    right: 25px;
+    opacity: 0;
+    transition: all 0.6s;
+}
+
+.bluetoothOpen img.active {
+    opacity: 1;
+    left: 0px;
+}
+
+.ewmOpen img.active {
+    opacity: 1;
+    right: 0px;
+}
+
+/*product_intro end */
+
+/*product features css start */
+.product_features {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.product_features ul.features_list {
+    width: 1160px;
+    margin: 40px auto 60px;
+}
+
+.product_features ul.features_list li {
+    float: left;
+    width: 212px;
+    height: auto;
+    margin: 0 39px;
+}
+
+.product_features ul.features_list li p {
+    font-size: 18px;
+    color: #333333;
+    text-align: center;
+    padding: 0 10px;
+    margin: 20px 0 0 0;
+}
+
+/*product page css end */
+
+/*左邻小站 page css start */
+.product_advantage {
+    background: rgb(246, 246, 246);
+    padding: 20px 0 90px 0;
+}
+
+.product_advantage h3 {
+    background: url(../images/addPage/bg_h4.png) no-repeat center;
+}
+
+.product_advantage .wrap {
+    margin: 0 auto;
+}
+
+/*业务范围产品优势部分样式开始*/
+.commonPart {
+    width: 310px;
+    height: 300px;
+}
+
+.commonPart span {
+    display: block;
+    width: 106px;
+    height: 300px;
+    text-align: center;
+    border-left: 1px solid #ccc;
+}
+
+.intro_part3 span, .intro_part6 span {
+    border-left: 0px;
+    border-right: 1px solid #ccc;
+}
+
+.commonPart span p {
+    font-size: 18px;
+    color: #333333;
+    margin: 14px 0;
+}
+
+.commonPart span p.title, .intro_part2 span p.title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1fa24d;
+    margin: 30px 0 34px 0;
+}
+
+.intro_part2, .intro_part5 {
+    width: 300px;
+    height: 300px;
+    margin: 0 20px;
+}
+
+.intro_part2 span {
+    text-align: center;
+}
+
+.intro_part2 span p.title {
+    margin: 10px 0;
+}
+
+.intro_part2 span p {
+    font-size: 18px;
+    color: #333333;
+}
+
+.bottom {
+    margin-top: 24px;
+}
+
+.intro_part4, .intro_part6 {
+    padding-top: 26px;
+    border-top: 1px solid #ccc;
+}
+
+/*业务范围产品优势部分样式结束*/
+
+/*lianheyunying part css */
+.lianhe {
+    width: 100%;
+    height: 489px;
+    padding-top: 109px;
+    background: url(../images/addPage/lianhe.jpg) no-repeat center;
+}
+
+.lianheCon {
+    width: 820px;
+    height: 270px;
+    margin: 0 auto;
+    background: url(../images/addPage/lianheCon.png);
+}
+
+.lianheCon h4 {
+    width: 75%;
+    margin: 0 auto;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1fa24d;
+    text-align: center;
+    padding: 30px 0;
+    background: url(../images/addPage/bg_h4.png) no-repeat center;
+}
+
+.lianheCon h4 span {
+    font-weight: 100;
+    line-height: 35px;
+}
+
+.lianheCon p {
+    font-size: 18px;
+    color: #333333;
+    text-align: center;
+    margin: 5px 0;
+}
+
+/*左邻小站 page css end */
+
+/*联系我们页面*/
+.connectForm {
+    width: 100%;
+    height: 850px;
+    padding: 160px 0 100px 0;
+    background: url(../images/addPage/connect_bg.jpg) center no-repeat;
+}
+
+.connectForm .formBox {
+    width: 800px;
+    /*height: 630px;*/
+    padding: 5px 55px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    margin: 0 auto 50px auto;
+}
+
+.connectForm .formBox h3 {
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    color: #333333;
+    text-align: center;
+    margin: 30px 0;
+}
+
+#concatForm {
+
+}
+
+#concatForm .form-item-container {
+    margin: 20px auto;
+}
+#concatForm .form-item-container .input-container {
+    display: inline-block;
+    vertical-align: middle;
+    width: 500px;
+    float: right;
+}
+
+#concatForm label {
+    font-size: 19px;
+    font-weight: bold;
+    display: inline-block;
+    width: 160px;
+    vertical-align: middle;
+    margin-bottom: 0;
+
+}
+
+#concatForm ul li {
+    float: left;
+    width: 116px;
+    height: 36px;
+    margin-right: 12px;
+    border-radius: 5px;
+    background: #999;
+    opacity: 0.7;
+    font-size: 14px;
+    line-height: 36px;
+    text-align: center;
+    cursor: pointer;
+}
+#concatForm ul li:last-child {
+    margin: 0;
+}
+
+#concatForm ul li.active {
+    background: #1ea34d;
+    color: #fff;
+}
+
+#concatForm input[type='text'] {
+
+    padding: 0 10px;
+    width: 100%;
+    height: 36px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    background: url(../images/addPage/input.png);
+    background-size: cover;
+}
+
+#concatForm input[type='submit'] {
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    background: #1ea34d;
+    display: inline-block;
+    /*float: none;*/
+    border: none;
+    margin-top: 10px;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+}
+
+/*公司价值开始*/
+.company_value {
+    width: 100%;
+    height: auto;
+}
+
+.company_value .wrap {
+    width: 940px;
+    margin: 0 auto;
+}
+
+.company_value .wrap h3, h3.company_qualif_header {
+    font-size: 36px;
+    font-weight: normal;
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid #1ea34d;
+    margin: 60px 0 0 0;
+}
+
+.company_value .wrap ul.value_list {
+    margin: 60px 0 50px;
+}
+
+.company_value .wrap ul.value_list li {
+    width: 220px;
+    height: auto;
+    float: left;
+}
+
+.company_value .wrap ul.value_list li:nth-child(2) {
+    margin: 0 124px;
+}
+
+.company_value .wrap ul.value_list li img {
+    display: block;
+}
+
+.company_value .wrap ul.value_list li p {
+    text-align: center;
+    line-height: 24px;
+    margin-top: 10px;
+}
+
+/*公司资质部分*/
+h3.company_qualif_header {
+    width: 940px;
+    margin: 0 auto 40px;
+}
+
+.company_qualif_con {
+    width: 100%;
+    height: 830px;
+    background: url(../images/addPage/zzbb.jpg) no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.part1 {
+    width: 710px;
+    height: 390px;
+    position: relative;
+    top: 50px;
+    margin: 0px auto;
+}
+
+.part1 img, .part2 img {
+    width: 199px;
+    height: 260px;
+    position: absolute;
+}
+
+img.i1 {
+    top: 50px;
+    left: 50%;
+    margin-left: 20px;
+    z-index: 6;
+}
+
+img.i2 {
+    top: 50px;
+    left: 50%;
+    margin-left: -220px;
+    z-index: 6;
+}
+
+img.i3 {
+    top: 0px;
+    left: 50%;
+    margin-left: -100px;
+    z-index: 9;
+}
+
+img.i4 {
+    top: 100px;
+    left: 50%;
+    margin-left: 150px;
+    z-index: 3;
+}
+
+img.i5 {
+    top: 100px;
+    left: 50%;
+    margin-left: -350px;
+    z-index: 3;
+}
+
+.part2 {
+    width: 810px;
+    height: 300px;
+    position: relative;
+    top: 110px;
+    margin: 0px auto;
+}
+
+.part2-1 {
+    width: 250px;
+    height: 300px;
+    position: absolute;
+    left: 0;
+}
+
+.part2-1 img.i6 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.part2-1 img.i7 {
+    position: absolute;
+    left: 70px;
+    top: -50px;
+}
+
+.part2-2 {
+    width: 335px;
+    height: 300px;
+    position: absolute;
+    right: 0;
+}
+
+.part2-2 img.i8 {
+    width: 335px;
+    height: 236px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+p.comn_desc {
+    width: 100%;
+    height: 25px;
+    line-height: 25px;
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+}

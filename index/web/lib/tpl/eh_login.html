@@ -1,0 +1,48 @@
+{{if tpl == 'dialog'}}
+<div class="eh_login">
+    <form role="form" class="clearfix">
+        <div class="form-group">
+            <label for="id_eh_login_phone">用户名</label>
+            <input type="phone" class="form-control" id="id_eh_login_phone" place="用户名"></input>
+        </div>
+        <div class="form-group">
+            <label for="id_eh_login_password">密码</label>
+            <input type="password" class="form-control" id="id_eh_login_password" place="密码"></input>
+        </div>
+        <button type="button" class="btn btn-default pull-right eh_login_submit">登录</button>
+    </form>
+</div>
+{{else if tpl == 'index'}}
+<div class = "eh_h100"></div>
+<div class = "eh_login container">
+    <h3 class = "text-left"><strong>账号登录</strong></h3>
+    <hr/>
+    <form class = "form-horizontal eh_form_valid">
+        <div class = "form-group">
+            <label for = "id_eh_login_phone" class = "col-md-3 control-label">账号：</label>
+
+            <div class = "col-md-9">
+                <input type = "id_eh_login_phone" class = "form-control" id = "id_eh_login_phone" placeholder = "输入手机号/用户名" datatype = "*">
+            </div>
+        </div>
+        <div class = "form-group">
+            <label for = "id_eh_login_password" class = "col-md-3 control-label">密码：</label>
+
+            <div class = "col-md-9">
+                <input type = "password" class = "form-control" id = "id_eh_login_password" placeholder = "输入6到16位密码"
+                       datatype = "*6-16">
+            </div>
+        </div>
+        <div class = "form-group">
+            <div class = "col-md-3"></div>
+            <div class = "col-md-9">
+                <button type = "button" class = "btn btn-success eh_login_submit">登录</button>
+                &nbsp;&nbsp;&nbsp;<a href = "#a=password_recover"><small>忘记密码?</small></a>
+            </div>
+        </div>
+    </form>
+    <hr/>
+    <p class = "text-right"><a href = "#a=sign_up">没有账号？点击立即注册</a></p>
+</div>
+<div class="eh_h100"></div>
+{{/if}}

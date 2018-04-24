@@ -1,0 +1,45 @@
+<div>
+    <md-autocomplete ng-if="!pickChips" flex required
+                     md-selected-item="pick.ngModel"
+                     md-search-text="searchText"
+                     md-items="item in querySearch(searchText)"
+                     md-no-cache="true"
+                     md-delay="500"
+                     md-item-text="item.apartmentName"
+                     md-autoselect="true"
+                     ng-disabled="!pickCommunityId"
+                     md-floating-label="APARTMENT">
+        <md-item-template>
+            <span md-highlight-text="searchText">{{item.apartmentName}} </span>
+        </md-item-template>
+        <md-not-found>
+            No matches found
+        </md-not-found>
+    </md-autocomplete>
+
+
+    <md-chips ng-if="pickChips" ng-model="pick.ngModel" md-autocomplete-snap md-require-match>
+        <md-autocomplete
+                md-selected-item="selectedItem"
+                md-search-text="searchText"
+                md-items="item in querySearch(searchText)"
+                md-no-cache="true"
+                md-delay="500"
+                md-item-text="item.apartmentName"
+                md-autoselect="true"
+                ng-disabled="!pickCommunityId"
+                placeholder="APARTMENT">
+            <md-item-template>
+                <span md-highlight-text="searchText">{{item.apartmentName}}</span>
+            </md-item-template>
+            <md-not-found>
+                No matches found
+            </md-not-found>
+        </md-autocomplete>
+        <md-chip-template>
+        <span>
+          <strong>{{$chip.apartmentName}}</strong>
+        </span>
+        </md-chip-template>
+    </md-chips>
+</div>

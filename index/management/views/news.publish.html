@@ -1,0 +1,78 @@
+<div class="zl-display-page zl-w70p">
+
+    <md-toolbar class="zl-toolbar">
+        <div class="md-toolbar-tools">
+            新闻发布
+        </div>
+    </md-toolbar>
+
+    <div class="zl-display-page-content">
+
+        <form name="newsForm" class="md-padding" layout="columns" layout-wrap layout-align="space-between start">
+            <md-input-container flex="45">
+                <label>新闻标题</label>
+                <input ng-model="news.title" required>
+            </md-input-container>
+            <md-input-container flex="45">
+                <label>新闻摘要</label>
+                <textarea ng-model="news.newsAbstract" required></textarea>
+            </md-input-container>
+
+            <div flex="100" layout="row" layout-align="space-between center">
+                <div flex="24" class="ng-input-button-container">
+                    <md-input-container class="zl-w90p">
+                        <label>新闻来源链接</label>
+                        <input type="text" ng-model="news.sourceUri"/>
+                    </md-input-container>
+                </div>
+
+                <div flex="24" class="ng-input-button-container">
+                    <md-input-container class="zl-w90p">
+                        <label>新闻来源名称</label>
+                        <input type="text" ng-model="news.sourceText"/>
+                    </md-input-container>
+                </div>
+
+                <div flex="24" class="ng-input-button-container">
+                    <md-input-container class="zl-w90p">
+                        <label>文章标签 [多个标签请用英文逗号（,）分开]</label>
+                        <input type="text" ng-model="news.tags"/>
+                    </md-input-container>
+                </div>
+
+                <div flex="24">
+                    <label>新闻发布时间</label>
+                    <md-datepicker ng-model="news.createDate" md-placeholder="选择日期"></md-datepicker>
+                </div>
+
+
+            </div>
+
+            <md-input-container layout="row" layout-align="start center">
+                <img ng-src="{{host + news.imageUri}}" alt="" height="80" width="120" ng-if="news.imageUri"
+                     style="display: block; float: left; margin-right: 30px;"/>
+                <button type="button" id="uploadNewsImage">上传新闻缩略图</button>
+                <button type="button" id="uploadNewsContentImage">上传新闻缩略图</button>
+            </md-input-container>
+
+            <md-content flex="100">
+                <p>新闻正文：</p>
+                <div keditor ng-model="news.content" kconfig="editor.config"></div>
+            </md-content>
+
+            <md-content flex="100" class="md-padding">
+                <div layout="row" layout-align="space-around center">
+                    <md-button  class="md-primary md-raised" ng-click="news.saveDraft()">保存草稿</md-button>
+                    <md-button  class="md-primary md-raised" ng-click="news.onPreview()">预览</md-button>
+                    <md-button  class="md-raised" ng-click="news.delete()">移至回收站</md-button>
+                    <md-button  class="md-primary md-raised" ng-click="news.publish()">发布</md-button>
+                </div>
+
+            </md-content>
+
+        </form>
+
+
+    </div>
+
+</div>

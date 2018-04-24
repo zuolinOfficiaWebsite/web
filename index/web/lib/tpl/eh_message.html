@@ -1,0 +1,43 @@
+{{if tpl == 'main'}}
+<div class="eh_message">
+    <div class="eh_message_list">
+        <div class="eh_message_list_box">
+
+        </div>
+    </div>
+    <div class="eh_p10"></div>
+    <div class="eh_message_poster" id="id_eh_message_poster">
+        发表框
+    </div>
+</div>
+{{else if tpl == 'list'}}
+{{each data}}
+<div class="eh_message_list_m" data-msgId="{{$value.msgId}}">
+    <div class="text-muted text-center eh_message_list_m_time">{{EH.Time.getTimeStrAll($value.createTime)}}</div>
+
+    <div class="media">
+        {{if $value.from.targetId !== config.userId}}
+        <div class="media-left">
+            <img class="media-object" src="{{$value.from.targetAvatar}}">
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading">{{$value.from.targetName}}{{if $value.from.belongName
+                }}({{$value.from.belongName}}){{/if}}</h4>
+
+            <div class="bg-info eh_p10 pull-left">{{$value.content}}</div>
+        </div>
+        {{else}}
+        <div class="media-body">
+            <h4 class="media-heading text-right">{{$value.from.targetName}}{{if $value.from.belongName
+                }}({{$value.from.belongName}}){{/if}}</h4>
+
+            <div class="bg-success eh_p10 pull-right">{{$value.content}}</div>
+        </div>
+        <div class="media-right">
+            <img class="media-object" src="{{$value.from.targetAvatar}}">
+        </div>
+        {{/if}}
+    </div>
+</div>
+{{/each}}
+{{/if}}

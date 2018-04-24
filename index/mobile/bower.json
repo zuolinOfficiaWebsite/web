@@ -1,0 +1,25 @@
+{
+  "name": "management",
+  "version": "0.0.0",
+  "authors": [
+    "yatang.li <yatang.li@zuolin.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "~2.1.4",
+    "amazeui": "~2.5.0",
+    "font-awesome": "~4.3.0",
+    "underscore": "~1.8.3",
+    "jquery-json": "~2.5.1",
+    "mobiscroll": "2.16.1",
+    "zepto": "1.1.6"
+  }
+}
+

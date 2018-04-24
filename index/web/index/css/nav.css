@@ -1,0 +1,100 @@
+#navListId{
+    background: #ffffff;
+    width: 100%;
+    height: 75px;
+    font-size: 16px;
+    border-color: transparent;
+    border-radius: 0px;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+#navListId div div li{
+    width: 80px;
+    height: 75px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    line-height: 75px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#navListId div div .selected{
+    opacity: 1;
+    color: #f56851;
+}
+
+#navListId div div .selected a{
+    
+    color: #1FA24F;
+	-webkit-transition: color .4s ease;
+    -moz-transition: color .4s ease;
+    -o-transition: color .4s ease;
+    transition: color .4s ease;
+}
+
+#navListId div div .high{
+    /*border-top: 4px solid #1FA24F;*/
+    opacity: 1;
+    color: #1fa24d;
+	  font-size: 14px;
+}
+
+#navListId div div .high_focus{
+    color: #FFF;
+	background-color:#1FA24F;
+		  font-size: 14px;
+}
+
+#navListId div div .high a{
+    	  font-size: 14px;
+    color: #1fa24d;
+	-webkit-transition: color .4s ease;
+    -moz-transition: color .4s ease;
+    -o-transition: color .4s ease;
+    transition: color .4s ease;
+}
+
+#navListId div div .high_focus a{
+    color: #FFF;
+		  font-size: 14px;
+		  -webkit-transition: color .4s ease;
+    -moz-transition: color .4s ease;
+    -o-transition: color .4s ease;
+    transition: color .4s ease;
+}
+
+#navListId div div li a{
+    width: 80px;
+    padding: 0;
+    height: 75px;
+    line-height: 75px;
+	color:#313131;
+	
+	-webkit-transition: color .4s ease;
+    -moz-transition: color .4s ease;
+    -o-transition: color .4s ease;
+    transition: color .4s ease;
+}
+
+#navListId div div li a:hover{
+    color: #9c9c9c;
+    /*font-weight: bolder;*/
+}
+
+#head .nav_logo{
+    position: absolute;
+    top: 0px;
+    left: 200px;
+}
+
+#head .nav_logo img{
+    height: 75px;
+    max-height: 75px;
+    line-height: 75px;
+}
+
+.submenu_selected {
+	color: #666565;
+}

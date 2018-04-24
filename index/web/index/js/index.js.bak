@@ -1,0 +1,135 @@
+(function () {
+    'use strict';
+
+    var page = window.location.pathname.split('/').pop().split('.')[0];
+
+    var hash = {
+        'index': 0,
+        'co_park': 1,
+        'co_village': 1,
+        'co_tech': 0,
+        'co_meet': 0,
+        'co_gov': 1,
+        'co_business': 1,
+        'au_feedback': 2,
+        'au_jobs': 2,
+        'au_news': 2,
+        'au_aboutus': 2,
+        'login': 3
+    };
+
+    var subHash = {
+        'co_park': 0,
+        'co_village': 1,
+        'co_gov': 2,
+        'co_business': 3
+    };
+
+    var auHash = {
+        'au_aboutus': 0,
+        'au_jobs': 1,
+        'au_news': 2,
+        'au_feedback': 3
+    };
+
+	var proHash = {
+        'co_village2': 1,
+        'co_park2': 0,
+        'co_meet': 2,
+        'add_product': 3,
+        'add_zuolinxiaozhan': 4
+    };
+
+    var $mainNav = $('.index_main_navbar');
+    var $subNav = $('.index_sub_navbar');
+    var $auNav = $('.index_au_navbar');
+    var $proNav = $('.index_product_navbar');
+
+    //$mainNav.find('.navbar-right li').eq(hash[page]).addClass('active');
+
+    var isSubShow = (subHash[page] !== undefined);
+    var isAuShow = (auHash[page] !== undefined);
+    var isProShow = (proHash[page] !== undefined);
+    var showSub = function () {
+        $subNav.show();
+        $auNav.hide();
+		$proNav.hide();
+    };
+    var showAu = function () {
+        $auNav.show();
+        $subNav.hide();
+		$proNav.hide();
+    };
+	var showPro = function () {
+		$proNav.show();
+        $subNav.hide();
+        $auNav.hide();
+    };
+    var switchAuSub = function() {
+        if (isAuShow) {
+            showAu();
+        }
+        if (isSubShow) {
+            showSub();
+        }
+		if (isProShow) {
+            showPro();
+        }
+    };
+    if (isSubShow) {
+       $subNav.show().find('.navbar-right li').eq(subHash[page]).addClass('active');
+    }
+    if (isAuShow) {
+        $auNav.show().find('.navbar-right li').eq(auHash[page]).addClass('active');
+    }
+	if (isProShow) {
+       $proNav.show().find('.navbar-right li').eq(proHash[page]).addClass('active');
+    }
+
+	$mainNav.find('.navbar-nav li:eq(1)').mouseenter(showPro).mouseleave(switchAuSub);
+    $proNav.mouseenter(showPro).mouseleave(switchAuSub);
+
+    $mainNav.find('.navbar-nav li:eq(2)').mouseenter(showSub).mouseleave(switchAuSub);
+    $subNav.mouseenter(showSub).mouseleave(switchAuSub);
+
+    $mainNav.find('.navbar-nav li:eq(3)').mouseenter(showAu).mouseleave(switchAuSub);
+    $auNav.mouseenter(showAu).mouseleave(switchAuSub);
+
+    seajs.use('lib/js/everhome_bussiness', function (EHB) {
+        EHB.getUserInfo(function (info) {
+            var $li = $('.index_navbar').find('.navbar-right li');
+            $li.last().prev().removeClass('none').find('a').html(info.nickName);
+            $li.last().removeClass('none').find('a').html('登出');
+            $li.last().prev().prev().addClass('none');
+        });
+    });
+
+    $('.index_banner.flexslider').flexslider({
+        animation: "slide"
+    });
+
+
+    function autoScroll(obj) {
+        var $obj = $(obj);
+        $obj.find("li:eq(0)").animate({
+            marginTop: "-40px"
+        }, 500, function () {
+            $(this).css({marginTop: "0px"});
+            $obj.find("li:first").appendTo($obj);
+        });
+    }
+
+    setInterval(function () {
+        autoScroll('.index_actives_ul');
+    }, 5000);
+
+
+    // index co tech
+    $('.index_tech_flexslider.flexslider').flexslider({
+        animation: "slide",
+        itemWidth: 210,
+        itemMargin: 5,
+        minItems: 2,
+        maxItems: 2
+    });
+})();

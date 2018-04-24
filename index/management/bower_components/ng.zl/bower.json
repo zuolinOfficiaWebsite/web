@@ -1,0 +1,26 @@
+{
+  "name": "ng.zl",
+  "version": "0.6.20",
+  "homepage": "https://github.com/zlfe/ng.zl",
+  "authors": [
+    "yatang.li <yatang.li@zuolin.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "fontawesome": "~4.3.0",
+    "underscore": "~1.8.3",
+    "jquery": "~2.1.4",
+    "angular-sanitize": "~1.4.0",
+    "bootstrap": "~3.3.5",
+    "angular": "1.4.0",
+    "angular-material": "~0.10.0",
+    "FileSaver": "*"
+  }
+}
